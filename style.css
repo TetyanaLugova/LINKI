@@ -1,0 +1,67 @@
+:root {
+  --colors-blue-900: #003784;
+  --colors-blue-800: #0049a2;
+  --colors-blue-700: #085bbd;
+  --colors-blue-600: #326ed7;
+  --colors-blue-500: #4f82ee;
+  --colors-blue-400: #6b97ff;
+  --colors-blue-300: #87acff;
+  --colors-blue-200: #a3c2ff;
+  --colors-blue-100: #bed8ff;
+  --colors-blue-50: #daefff;
+  --colors-green-900: #004620;
+  --colors-green-800: #005b2f;
+  --colors-green-700: #00703f;
+  --colors-green-600: #008551;
+  --colors-green-500: #009b64;
+  --colors-green-400: #21b078;
+  --colors-green-300: #47c68e;
+  --colors-green-200: #68dca5;
+  --colors-green-100: #88f1bd;
+  --colors-green-50: #a8ffd6;
+  --colors-blue-source: #236ad4;
+  --colors-green-source: #32c287;
+  --colors-purple-source: #874fff;
+  --colors-purple-900: #3d189d;
+  --colors-purple-800: #5328be;
+  --colors-purple-700: #6b39dc;
+  --colors-purple-600: #834df7;
+  --colors-purple-500: #9b61ff;
+  --colors-purple-400: #b377ff;
+  --colors-purple-300: #cc8eff;
+  --colors-purple-200: #e3a6ff;
+  --colors-purple-100: #fabfff;
+  --colors-purple-50: #ffd8ff;
+  --colors-graphite-source: #333;
+  --colors-graphite-900: #393939;
+  --colors-graphite-800: #4b4b4b;
+  --colors-graphite-700: #5e5e5e;
+  --colors-graphite-600: #727272;
+  --colors-graphite-500: #868686;
+  --colors-graphite-400: #9b9b9b;
+  --colors-graphite-300: #b0b0b0;
+  --colors-graphite-200: #c6c6c6;
+  --colors-graphite-100: #ddd;
+  --colors-graphite-50: #f3f3f3;
+  --colors-base-white: #fff;
+  --colors-base-black: #000;
+  --colors-base-white-15: rgba(255, 255, 255, 0.15);
+  --colors-base-red: #fa4549;
+  --colors-base-blue: #3b5884;
+  --colors-base-blue-50: rgba(59, 88, 132, 0.5);
+  --colors-blue-source-50: rgba(35, 106, 212, 0.5);
+  --colors-green-500-50: rgba(0, 155, 100, 0.5);
+  --colors-graphite-50-50: rgba(243, 243, 243, 0.5);
+  --colors-base-white-50: rgba(255, 255, 255, 0.5);
+  --colors-blue-source-50-2: rgba(35, 106, 212, 0.05);
+  --colors-graphite-source-5: rgba(51, 51, 51, 0.05);
+  --colors-green-source-10: rgba(50, 194, 135, 0.1);
+  --colors-purple-source-10: rgba(135, 79, 255, 0.1);
+  --colors-purple-800-25: rgba(83, 40, 190, 0.25);
+}
+
+:root {
+  --font-family: "Geologica", sans-serif;
+  --second-family: "Martian Mono", sans-serif;
+  --third-family: "Lexend", sans-serif;
+}
