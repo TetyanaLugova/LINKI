@@ -36,14 +36,9 @@
   <body>
     <!-- HEADER -->
     <header>
-      <a href="index.html" class="nav__logo-link">
-        <img
-          src="image/logo.svg"
-          alt="Linki"
-          width="120"
-          height="40"
-          class="nav__logo-image"
-        />
+      <a href="index.html" class="nav-logo-link">
+        <img src="image/logo.svg" alt="Linki" .btn-close-hidden { display: none;
+        } class="nav__logo-image" />
       </a>
       <nav class="nav nav-deck">
         <ul class="nav-list">
@@ -77,30 +72,76 @@
         </button>
         <button class="nav-button">Get Started</button>
       </div>
-      <button class="btn-mob-menu" id="menuToggle">
-        MENU <img src="image/burger-icon.svg" alt="Memu button" />
+      <button class="btn-mob-menu" id="openMenu">
+        MENU <img src="image/burger-icon.svg" alt="Open" />
+      </button>
+
+      <button class="btn-mob-menu btn-close-hidden" id="closeMenu">
+        CLOSE <img src="image/close-icon.svg" alt="Close" />
       </button>
     </header>
 
     <div class="mobile-menu" id="mobileMenu">
-      <div class="mobile-menu__search">
-        <input type="text" placeholder="Search" />
-        <button><img src="image/search-icon.svg" alt="Search" /></button>
+      <div class="mobile-menu__search-wrapper">
+        <button type="button" class="search-toggle-btn" id="searchToggle">
+          <span class="search-text">SEARCH</span>
+          <img src="image/search-icon.svg" class="icon-search" alt="Search" />
+          <span class="icon-close-search"
+            ><img src="image/close-icon.svg" alt=""
+          /></span>
+        </button>
+
+        <div class="search-dropdown" id="searchDropdown">
+          <input type="text" placeholder="Search" class="mobile-menu__input" />
+          <button class="search-submit-arrow">
+            <img src="image/search-input-mob.svg" alt="" />
+          </button>
+        </div>
       </div>
       <nav class="mobile-menu__nav">
         <ul class="mobile-menu__list">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="#link-insertion">Link insertion</a></li>
-          <li><a href="#guest-posts">Guest posts</a></li>
-          <li><a href="#link-building-packages">Link Building Packages</a></li>
-          <li><a href="blog.html">Blog</a></li>
+          <li class="mobile-menu-item"><a href="index.html">Home</a></li>
+          <li class="mobile-menu-item">
+            <a href="#link-insertion">Link insertion</a>
+          </li>
+          <li class="mobile-menu-item">
+            <a href="#guest-posts">Guest posts</a>
+          </li>
+          <li class="mobile-menu-item">
+            <a href="#link-building-packages">Link Building Packages</a>
+          </li>
+          <li class="mobile-menu-item"><a href="blog.html">Blog</a></li>
         </ul>
       </nav>
     </div>
     <!-- MAIN -->
-    <main></main>
+    <main>
+      <section class="hero">
+        <div class="hero-content">
+          <h1 class="hero-title">Ready for boosting your site?</h1>
+          <p class="hero-text">
+            Let`s make safe and natural links for your SEO
+          </p>
+          <div class="wrap-input-hero">
+            <input type="email" placeholder="YOUR EMAIL" class="hero-input" />
+            <button class="input-hero-submit-arrow">
+              <img src="image/input-hero-arrow.svg" alt="" />
+            </button>
+          </div>
+        </div>
+        <div class="video-bg-container">
+          <img src="/image/bg-hero.png" alt="" />
+          <!-- <video autoplay muted loop playsinline class="video-bg">
+            <source src="video/hero-bg.mp4" type="video/mp4" />
+            Ваш браузер не підтримує відео.
+          </video> -->
+        </div>
+
+        <div class="hero-content"></div>
+      </section>
+    </main>
 
     <footer></footer>
-    <script src="js/main.js" defer></script>
+    <script src="js/script.js" defer></script>
   </body>
 </html>

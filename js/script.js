@@ -1,15 +1,33 @@
-const menuToggle = document.getElementById("menuToggle");
-const mobileMenu = document.getElementById("mobileMenu");
+// Мобільне меню
+const openBtn = document.getElementById("openMenu");
+const closeBtn = document.getElementById("closeMenu");
+const menu = document.getElementById("mobileMenu");
 
-menuToggle.addEventListener("click", () => {
-  const isOpen = mobileMenu.classList.toggle("is-open");
-  menuToggle.classList.toggle("active");
+openBtn.addEventListener("click", () => {
+  menu.classList.add("is-open");
+  openBtn.style.display = "none"; // Ховаємо MENU
+  closeBtn.style.display = "flex"; // Показуємо CLOSE
+  document.body.style.overflow = "hidden";
+});
 
-  if (isOpen) {
-    menuToggle.textContent = "CLOSE ×"; // Міняємо текст на закриття
-    document.body.style.overflow = "hidden";
-  } else {
-    menuToggle.textContent = "MENU"; // Повертаємо назад
-    document.body.style.overflow = "";
+closeBtn.addEventListener("click", () => {
+  menu.classList.remove("is-open");
+  openBtn.style.display = "flex"; // Показуємо MENU
+  closeBtn.style.display = "none"; // Ховаємо CLOSE
+  document.body.style.overflow = "";
+});
+
+// Мобільний пошук
+const searchToggle = document.getElementById("searchToggle");
+const searchDropdown = document.getElementById("searchDropdown");
+
+searchToggle.addEventListener("click", () => {
+  // Перемикаємо класи
+  const isActive = searchToggle.classList.toggle("is-active");
+  searchDropdown.classList.toggle("show");
+
+  // Якщо відкрили — ставимо фокус на поле
+  if (isActive) {
+    searchDropdown.querySelector("input").focus();
   }
 });

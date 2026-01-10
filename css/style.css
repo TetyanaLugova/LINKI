@@ -116,36 +116,173 @@ body {
 
 header {
   position: relative;
-  z-index: 1001; /* Хедер має бути вище за меню */
-  background-color: #1e57b8;
+  z-index: 1001;
+  background: var(--colors-blue-700);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 80px; /* Припустимо, висота така */
-  padding: 0 20px;
+  padding: 24px 16px;
+  height: 89px;
 }
-
+.nav-logo-link img {
+  width: 160px;
+  height: 20px;
+}
+.nav-deck {
+  display: none;
+}
+.header-btn-deck {
+  display: none;
+}
+.btn-mob-menu {
+  border: 1px solid var(--colors-base-white);
+  border-radius: 99px;
+  width: 107px;
+  height: 41px;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.2;
+  text-align: center;
+  color: var(--colors-base-white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn-close-hidden {
+  display: none;
+}
+.btn-mob-menu img {
+  margin-left: 8px;
+  vertical-align: middle;
+  width: 16px;
+  height: 16px;
+}
 .mobile-menu {
   position: fixed;
-  top: 80px; /* Починається рівно під хедером */
+  top: 89px;
   left: 0;
   width: 100%;
-  height: calc(100vh - 80px); /* Займає решту екрану */
-  background-color: #1e57b8;
+  height: calc(100vh - 89px); /* Займає решту екрану */
+  background: var(--colors-blue-700);
   z-index: 1000;
   padding: 40px 20px;
   transform: translateX(100%);
   transition: transform 0.3s ease-in-out;
   overflow-y: auto;
 }
-
 .mobile-menu.is-open {
   transform: translateX(0);
 }
 
-/* Стиль для кнопки, коли меню відкрите */
-.btn-mob-menu.active {
-  /* Можна додати рамку як на макеті для CLOSE */
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 20px;
+.mobile-menu__search-wrapper {
+  margin: 0 20px 30px;
+}
+/* Кнопка-перемикач */
+.search-toggle-btn {
+  border: 1px solid var(--colors-base-white);
+  border-radius: 99px;
+  height: 41px;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.2;
+  text-align: center;
+  color: var(--colors-base-white);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 0 12px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  margin-left: auto;
+}
+.icon-search {
+  width: 12px;
+  height: 12px;
+}
+.icon-close-search {
+  display: none;
+  font-size: 24px;
+  line-height: 1;
+}
+.search-toggle-btn.is-active .search-text {
+  display: none;
+}
+.search-toggle-btn.is-active .icon-search {
+  display: none;
+}
+.search-toggle-btn.is-active .icon-close-search {
+  display: flex;
+  align-items: center;
+}
+/* Випадаючий інпут */
+.search-dropdown {
+  display: none;
+  position: relative;
+  width: 100%;
+  margin-top: 8px;
+}
+.search-dropdown.show {
+  display: block;
+}
+.search-dropdown.show {
+  border: 1px solid var(--colors-graphite-100);
+  border-radius: 8px;
+  padding: 12px;
+  height: 44px;
+  background: var(--colors-base-white);
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.2;
+  color: var(--colors-graphite-500);
+  outline: none;
+}
+.search-submit-arrow {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+nav.mobile-menu__nav {
+  padding: 0 24px;
+}
+.mobile-menu__list {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 16px;
+}
+.mobile-menu-item {
+  padding: 13px 0;
+}
+.mobile-menu-item a {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.2;
+  text-align: center;
+  color: var(--colors-base-white);
+  padding: 13px 0;
+}
+/* ======= HERO ========= */
+
+.video-bg-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Відео під контентом */
+  overflow: hidden;
+}
+.video-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Відео заповнить весь екран без деформації */
 }
