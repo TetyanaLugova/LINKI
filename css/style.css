@@ -65,3 +65,87 @@
   --second-family: "Martian Mono", sans-serif;
   --third-family: "Lexend", sans-serif;
 }
+
+@font-face {
+  font-family: "Geologica";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("../fonts/geologica-v5-latin-300.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Geologica";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/geologica-v5-latin-regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Geologica";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/geologica-v5-latin-500.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Geologica";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../fonts/geologica-v5-latin-600.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Martian Mono";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/martian-mono-v6-latin-500.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Lexend";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/lexend-v26-latin-500.woff2") format("woff2");
+}
+
+body {
+  font-family: var(--font-family);
+  overflow-x: hidden;
+}
+
+header {
+  position: relative;
+  z-index: 1001; /* Хедер має бути вище за меню */
+  background-color: #1e57b8;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px; /* Припустимо, висота така */
+  padding: 0 20px;
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 80px; /* Починається рівно під хедером */
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 80px); /* Займає решту екрану */
+  background-color: #1e57b8;
+  z-index: 1000;
+  padding: 40px 20px;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  overflow-y: auto;
+}
+
+.mobile-menu.is-open {
+  transform: translateX(0);
+}
+
+/* Стиль для кнопки, коли меню відкрите */
+.btn-mob-menu.active {
+  /* Можна додати рамку як на макеті для CLOSE */
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+}

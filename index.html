@@ -9,21 +9,13 @@
     <link rel="preconnect" href="https://cdn.jsdelivr.net" />
     <link
       rel="preload"
-      href="fonts/InstrumentSans-Variable.woff2"
+      href="fonts/geologica-v5-latin-regular.woff2"
       as="font"
       type="font/woff2"
       crossorigin
     />
-    <link
-      rel="preload"
-      href="fonts/icomoon.ttf?pknzsf"
-      as="font"
-      type="font/ttf"
-      crossorigin
-    />
 
-    <link rel="stylesheet" href="css/reset.css" />
-    <link rel="stylesheet" href="css/vendor/swiper-bundle.min.css" />
+    <!-- <link rel="stylesheet" href="css/vendor/swiper-bundle.min.css" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
@@ -37,12 +29,78 @@
       />
     </noscript>
     <link rel="stylesheet" href="css/vendor/aos.css" />
-    <link rel="stylesheet" href="css/icons.css" />
+    <link rel="stylesheet" href="css/icons.css" /> -->
+    <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
-  <!-- HEADER -->
-  <header></header>
+  <body>
+    <!-- HEADER -->
+    <header>
+      <a href="index.html" class="nav__logo-link">
+        <img
+          src="image/logo.svg"
+          alt="Linki"
+          width="120"
+          height="40"
+          class="nav__logo-image"
+        />
+      </a>
+      <nav class="nav nav-deck">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="index.html" class="nav__link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="#link-insertion" class="nav__link">Link insertion</a>
+          </li>
+          <li class="nav-item">
+            <a href="#guest-posts" class="nav__link">Guest posts</a>
+          </li>
+          <li class="nav-item">
+            <a href="#link-building-packages" class="nav__link"
+              >Link Building Packages</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="blog.html" class="nav__link nav__link--button">Blog</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="header-btn header-btn-deck">
+        <button class="search-btn">
+          <img
+            src="image/search-icon.svg"
+            alt="Search"
+            width="20"
+            height="20"
+          />
+        </button>
+        <button class="nav-button">Get Started</button>
+      </div>
+      <button class="btn-mob-menu" id="menuToggle">
+        MENU <img src="image/burger-icon.svg" alt="Memu button" />
+      </button>
+    </header>
 
-  <body></body>
-  <footer></footer>
+    <div class="mobile-menu" id="mobileMenu">
+      <div class="mobile-menu__search">
+        <input type="text" placeholder="Search" />
+        <button><img src="image/search-icon.svg" alt="Search" /></button>
+      </div>
+      <nav class="mobile-menu__nav">
+        <ul class="mobile-menu__list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#link-insertion">Link insertion</a></li>
+          <li><a href="#guest-posts">Guest posts</a></li>
+          <li><a href="#link-building-packages">Link Building Packages</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </nav>
+    </div>
+    <!-- MAIN -->
+    <main></main>
+
+    <footer></footer>
+    <script src="js/main.js" defer></script>
+  </body>
 </html>
