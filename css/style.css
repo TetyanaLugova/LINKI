@@ -113,6 +113,11 @@ body {
   font-family: var(--font-family);
   overflow-x: hidden;
 }
+.container {
+  width: 94%;
+  margin: 0 auto;
+}
+/* ======= HEADER ========= */
 
 header {
   position: relative;
@@ -315,6 +320,15 @@ nav.mobile-menu__nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 7px;
+}
+.wrap-input-hero:hover {
+  box-shadow: 0 0 16px 0 rgba(0, 179, 106, 0.2),
+    0 0 24px 0 rgba(0, 179, 106, 0.2);
+  background: var(--colors-base-white-15);
+}
+input.hero-input {
+  flex: 1;
 }
 .hero-input::placeholder {
   font-family: var(--font-family);
@@ -343,6 +357,9 @@ nav.mobile-menu__nav {
   -ms-overflow-style: none;
   -webkit-overflow-scrolling: touch;
   padding: 20px;
+  max-width: 917px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .cards-wrapper::-webkit-scrollbar {
   display: none;
@@ -405,6 +422,9 @@ nav.mobile-menu__nav {
 .hero.card-green {
   background: var(--colors-green-500-50);
 }
+.hero.card-green img {
+  height: 60%;
+}
 .hero.card-bg-last {
   position: relative;
   z-index: 0;
@@ -461,8 +481,8 @@ nav.mobile-menu__nav {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.8); /* Затемнення як на скріншоті */
-  display: none; /* Сховано за замовчуванням */
+  background: rgba(0, 0, 0, 0.8);
+  display: none;
   justify-content: center;
   align-items: center;
   z-index: 1000;
@@ -471,17 +491,15 @@ nav.mobile-menu__nav {
 .modal-overlay.is-open {
   display: flex;
 }
-
 .modal-window {
   background: var(--colors-base-white);
   width: 100%;
   max-width: 476px;
-  border-radius: 24px; /* Сильне закруглення як у Figma */
-  padding: 40px;
+  border-radius: 24px;
+  padding: 60px 40px 40px 40px;
   position: relative;
   text-align: left;
 }
-
 .modal-close {
   position: absolute;
   top: 20px;
@@ -515,7 +533,6 @@ nav.mobile-menu__nav {
   color: var(--colors-graphite-source);
   margin-bottom: 32px;
 }
-
 .modal-form-row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -626,14 +643,338 @@ nav.mobile-menu__nav {
     transform: translateY(0);
   }
 }
+
+.services-section {
+  padding: 48px 0 32px;
+}
+.list-tab-services {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 0 auto;
+  margin-bottom: 32px;
+}
+.tab-item-services {
+  border: 1px dashed var(--colors-graphite-100);
+  border-radius: 4px;
+  padding: 4px 8px;
+  height: 25px;
+  font-family: var(--font-family);
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.2;
+  color: var(--colors-graphite-source);
+}
+.services-title {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 44px;
+  line-height: 1;
+  letter-spacing: -0.07em;
+  text-align: center;
+  color: var(--colors-graphite-source);
+  margin-bottom: 20px;
+  max-width: 376px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.services-text {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.2;
+  text-align: center;
+  color: var(--colors-graphite-source);
+  max-width: 376px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.services-img-dog {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}
+.services-card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.services-card-item {
+  border-radius: 24px;
+  height: 276px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.services-card-item-img {
+  width: 100px;
+  height: 100px;
+}
+.services-card-item-bg-img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  /* width: 100%;
+  height: 100%; */
+  border-radius: 24px;
+}
+.wrap-services-card-content {
+  padding: 16px;
+}
+.services-card-item-title {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.2;
+  color: var(--colors-graphite-source);
+  margin-bottom: 12px;
+}
+.services-card-item-text {
+  font-family: var(--font-family);
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.2;
+  color: var(--colors-graphite-source);
+}
+.services-card-item.first-card {
+  background: var(--colors-green-source-10);
+}
+.services-card-item.second-card {
+  background: var(--colors-purple-source-10);
+}
+.services-card-item.third-card {
+  background: var(--colors-blue-source-50-2);
+}
+.services-card-item.fourth-card {
+  background: var(--colors-blue-50);
+}
+.services-card-item.fifth-card {
+  background: var(--colors-blue-100);
+}
+
+.cta-section {
+  padding: 32px 0 0;
+}
+.cta-title {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  text-align: center;
+  color: var(--colors-graphite-source);
+  margin-bottom: 24px;
+}
+.wrap-chat-content {
+  border-radius: 24px;
+  padding: 24px;
+  height: 143px;
+  background: var(--colors-blue-source);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.chat-content-text {
+  font-family: var(--font-family);
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.2;
+  color: var(--colors-base-white);
+}
+.chat-start-btn {
+  border: 1px solid var(--colors-base-white);
+  border-radius: 99px;
+  width: 201px;
+  height: 41px;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.2;
+  text-align: center;
+  color: var(--colors-base-white);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: auto;
+}
+
+/* Модальне чат */
+/* Оверлей чату */
+.chat-modal {
+  position: fixed; /* Фіксуємо відносно вікна браузера */
+  bottom: 20px; /* Відступ від нижнього краю */
+  right: 15px; /* Відступ від правого краю */
+  width: 100%;
+  max-width: 340px; /* Обмежуємо ширину, щоб на десктопі не було на весь екран */
+  z-index: 2000;
+  display: none; /* Початково приховано */
+
+  /* Прибираємо центрування, яке ми робили раніше */
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.chat-modal.is-open {
+  display: flex; /* Показуємо при кліку */
+}
+
+/* Контейнер вікна */
+.chat-container {
+  position: relative;
+  background: var(--colors-blue-50);
+  width: 90%;
+  padding: 32px 24px 24px;
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Додаємо тінь, щоб вікно виділялося */
+}
+
+/* Персонаж Отіс (виїжджає вгору) */
+.chat-character {
+  position: absolute;
+  top: -95px; /* Виштовхуємо картинку над рамку */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 140px;
+}
+
+.chat-character img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Кнопка закриття (хрестик) */
+.chat-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: var(--colors-blue-50);
+  border: 1px solid var(--colors-graphite-source);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 1;
+}
+
+/* Текстовий контент */
+.chat-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 40px 0 12px; /* Відступ зверху під песика */
+}
+
+.chat-text {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.4;
+  margin-bottom: 24px;
+}
+
+/* Форма */
+.chat-form input {
+  width: 100%;
+  height: 48px;
+  padding: 0 16px;
+  border: 1px solid #e0e0e0;
+  background: var(--colors-base-white);
+  border-radius: 12px;
+  margin-bottom: 12px;
+  font-family: inherit;
+}
+
+.chat-submit-btn {
+  width: 100%;
+  height: 48px;
+  background: var(--colors-green-source); /* Твій зелений колір */
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.chat-submit-btn:hover {
+  opacity: 0.9;
+}
 @media (min-width: 546px) {
   .wrap-hero-form {
     flex-direction: row;
+    width: 96%;
+    margin-left: auto;
+    margin-right: auto;
   }
   .wrap-input-hero {
     flex-grow: 1;
     min-width: 308px;
     max-width: 592px;
+  }
+}
+@media (min-width: 560px) {
+  .services-card-list {
+    display: grid;
+    /* Створюємо дві рівні колонки */
+    grid-template-columns: 1fr 1fr;
+    /* Описуємо структуру сітки: перша картка займає два рядки у висоту */
+    grid-template-areas:
+      "first second"
+      "third third"
+      "fourth fifth";
+    gap: 16px;
+    list-style: none;
+    padding: 0;
+  }
+  .first-card {
+    grid-area: first;
+  }
+  .second-card {
+    grid-area: second;
+  }
+  .third-card {
+    grid-area: third;
+  }
+  .fourth-card {
+    grid-area: fourth;
+  }
+  .fifth-card {
+    grid-area: fifth;
+  }
+}
+@media (min-width: 824px) {
+  .services-card-list {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    /* Скидаємо мапу областей, яку задали на 560px */
+    grid-template-areas: none;
+    gap: 16px;
+    max-width: 974px;
+    margin: 0 auto;
+  }
+
+  /* Скидаємо прив'язку до областей для всіх карток */
+  .first-card,
+  .second-card,
+  .third-card,
+  .fourth-card,
+  .fifth-card {
+    grid-area: auto;
+  }
+
+  /* Тепер спокійно розставляємо через span */
+  .first-card,
+  .second-card,
+  .third-card {
+    grid-column: span 2;
+  }
+
+  .fourth-card,
+  .fifth-card {
+    grid-column: span 3;
   }
 }
 /* На десктопі повертаємо звичайний вигляд */
