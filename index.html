@@ -116,32 +116,134 @@
     </div>
     <!-- MAIN -->
     <main>
-      <section class="hero">
+      <section class="hero-section">
         <div class="hero-content">
           <h1 class="hero-title">Ready for boosting your site?</h1>
           <p class="hero-text">
             Let`s make safe and natural links for your SEO
           </p>
-          <div class="wrap-input-hero">
-            <input type="email" placeholder="YOUR EMAIL" class="hero-input" />
-            <button class="input-hero-submit-arrow">
-              <img src="image/input-hero-arrow.svg" alt="" />
-            </button>
+          <div class="wrap-hero-form">
+            <div class="wrap-input-hero">
+              <img src="image/email-input-icon.svg" alt="" />
+              <input type="email" placeholder="YOUR EMAIL" class="hero-input" />
+              <button class="input-hero-submit-arrow">
+                <img src="image/input-hero-arrow.svg" alt="" />
+              </button>
+            </div>
+            <button class="hero-btn-modal">GET A CONSULTATION</button>
+          </div>
+          <div class="benefits">
+            <div class="hero cards-wrapper">
+              <div class="hero cards-track">
+                <div class="hero card card-dark">
+                  <img src="image/hero-card-1.svg" alt="Ranking" />
+                  <p class="hero-card-text">Increase keywords ranking</p>
+                </div>
+                <div class="hero card card-blue">
+                  <img src="image/hero-card-2.png" alt="Visibility" />
+                  <p class="hero-card-text">
+                    LLM <br />
+                    visibility
+                  </p>
+                </div>
+                <div class="hero card card-bg">
+                  <div class="hero-card-img-bg">
+                    <img src="image/hero-card-3.png" alt="Lighthouse" />
+                  </div>
+
+                  <p class="hero-card-text">Brand recognition</p>
+                </div>
+                <div class="hero card card-green">
+                  <img src="image/hero-card-4.svg" alt="Schedule" />
+                  <p class="hero-card-text">
+                    Traffic <br />
+                    growth
+                  </p>
+                </div>
+                <div class="hero card card-bg-last">
+                  <img
+                    class="hero-card-img-last"
+                    src="image/hero-card-img-5.png"
+                    alt=""
+                  />
+                  <div class="hero-card-img-bg-last">
+                    <img src="image/hero-card-bg-5.png" alt="" />
+                  </div>
+                  <p class="hero-card-text">
+                    Positive dynamics of the link profile
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
+
         <div class="video-bg-container">
-          <img src="/image/bg-hero.png" alt="" />
+          <img class="video-bg" src="/image/bg-hero.png" alt="" />
           <!-- <video autoplay muted loop playsinline class="video-bg">
             <source src="video/hero-bg.mp4" type="video/mp4" />
             Ваш браузер не підтримує відео.
           </video> -->
         </div>
-
-        <div class="hero-content"></div>
       </section>
     </main>
 
     <footer></footer>
+    <!-- Модальне вікно та вікно подяки -->
+    <div class="modal-overlay" id="modalOverlay">
+      <div class="modal-window">
+        <button class="modal-close" id="closeModal">
+          <img src="image/close-icon-modal.svg" alt="Close" />
+        </button>
+
+        <div id="modalFormContent">
+          <h2 class="modal-title">Discuss Your Project with Linki</h2>
+          <p class="modal-subtitle">
+            Leave your contact details, and we will help you develop a custom
+            strategy for safe and natural link building.
+          </p>
+          <form class="modal-form" id="mainContactForm">
+            <div class="modal-form-row">
+              <input type="text" placeholder="Name" required />
+              <input type="url" placeholder="Site" required />
+              <input type="email" placeholder="Email" required />
+            </div>
+            <textarea placeholder="Comment"></textarea>
+            <button type="submit" class="modal-submit-btn">
+              Send a request
+            </button>
+          </form>
+        </div>
+
+        <div id="modalThankYouContent" style="display: none">
+          <h2 class="modal-title">Thank You for Your Request!</h2>
+          <div class="modal-subtitle">
+            <p>
+              We have successfully received your consultation request. Our
+              specialist will:
+            </p>
+            <ul class="modal-list">
+              <li>
+                Analyze the information about your project and link building
+                needs.
+              </li>
+              <li>
+                Contact you within 24 hours during business hours to discuss the
+                details and prepare a brief.
+              </li>
+            </ul>
+          </div>
+          <div class="modal-image-wrapper">
+            <img
+              src="image/thank-you-dog.png"
+              alt="Success"
+              class="thank-you-img"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="js/script.js" defer></script>
   </body>
 </html>

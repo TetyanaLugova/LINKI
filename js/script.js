@@ -31,3 +31,58 @@ searchToggle.addEventListener("click", () => {
     searchDropdown.querySelector("input").focus();
   }
 });
+
+// Модальне вікно
+const modalTrigger = document.querySelector(".hero-btn-modal");
+const modalOverlay = document.getElementById("modalOverlay");
+const closeModal = document.getElementById("closeModal");
+
+// Відкрити
+modalTrigger.addEventListener("click", () => {
+  modalOverlay.classList.add("is-open");
+  document.body.style.overflow = "hidden"; // Блокуємо скрол сторінки
+});
+
+// Закрити через кнопку
+closeModal.addEventListener("click", () => {
+  modalOverlay.classList.remove("is-open");
+  document.body.style.overflow = ""; // Повертаємо скрол
+});
+
+// Закрити кліком на темний фон
+modalOverlay.addEventListener("click", (e) => {
+  if (e.target === modalOverlay) {
+    modalOverlay.classList.remove("is-open");
+    document.body.style.overflow = "";
+  }
+});
+
+const mainForm = document.getElementById("mainContactForm");
+const formContent = document.getElementById("modalFormContent");
+const thankYouContent = document.getElementById("modalThankYouContent");
+
+mainForm.addEventListener("submit", (e) => {
+  e.preventDefault(); // Зупиняємо реальну відправку для демонстрації
+
+  // 1. Приховуємо форму
+  formContent.style.display = "none";
+
+  // 2. Показуємо блок подяки
+  thankYouContent.style.display = "block";
+
+  // Опціонально: через 5 секунд закриваємо модалку автоматично
+
+  // setTimeout(() => {
+  //   document.getElementById("modalOverlay").classList.remove("is-open");
+  //   document.body.style.overflow = "";
+  // }, 5000);
+});
+
+// Не забудь оновити функцію закриття, щоб при наступному відкритті знову була форма
+document.getElementById("closeModal").addEventListener("click", () => {
+  setTimeout(() => {
+    formContent.style.display = "block";
+    thankYouContent.style.display = "none";
+    mainForm.reset(); // Очищуємо поля
+  }, 300); // Чекаємо поки модалка закриється візуально
+});
