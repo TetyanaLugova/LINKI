@@ -87,25 +87,26 @@ document.getElementById("closeModal").addEventListener("click", () => {
   }, 300); // Чекаємо поки модалка закриється візуально
 });
 
-// Модальне чат
-const chatStartBtn = document.querySelector(".chat-start-btn");
+// Отримуємо всі кнопки
+const chatStartBtns = document.querySelectorAll(".chat-start-btn");
 const chatModal = document.getElementById("chatModal");
 const closeChat = document.getElementById("closeChat");
 
-// Відкрити чат
-chatStartBtn.addEventListener("click", () => {
-  chatModal.classList.add("is-open");
-  // Блокуємо скрол фону, якщо потрібно
-  document.body.style.overflow = "hidden";
+// Проходимо циклом по кожній кнопці і додаємо подію
+chatStartBtns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    chatModal.classList.add("is-open");
+    document.body.style.overflow = "hidden";
+  });
 });
 
-// Закрити чат
+// Закрити чат (тут все правильно, бо кнопка закриття одна)
 closeChat.addEventListener("click", () => {
   chatModal.classList.remove("is-open");
   document.body.style.overflow = "";
 });
 
-// Закриття кліком на темний фон (якщо він буде)
+// Закриття кліком на фон
 chatModal.addEventListener("click", (e) => {
   if (e.target === chatModal) {
     chatModal.classList.remove("is-open");
