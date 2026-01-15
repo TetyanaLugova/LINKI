@@ -1075,6 +1075,7 @@ input.hero-input {
   flex: 1;
   border-radius: 24px;
   padding: 20px;
+  position: relative;
 }
 .link-packages-card-item.blye {
   background: var(--colors-blue-source-50-2);
@@ -1087,6 +1088,135 @@ input.hero-input {
 }
 .link-packages-card-item.last-card {
   background: var(--colors-graphite-source-5);
+}
+.link-packages-card-title {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+.link-packages-card-item.blye .link-packages-card-title {
+  color: var(--colors-blue-source);
+}
+.link-packages-card-item.green .link-packages-card-title {
+  color: var(--colors-green-source);
+}
+.link-packages-card-item.purple .link-packages-card-title {
+  color: var(--colors-purple-source);
+}
+.link-packages-card-text {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.2;
+  color: var(--colors-graphite-source);
+  margin-bottom: 23px;
+}
+.link-packages-card-price {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  color: var(--colors-graphite-source);
+  display: flex;
+  flex-direction: column;
+}
+.link-packages-card-price span {
+  font-weight: 400;
+  font-size: 14px;
+}
+.link-packages-card-line {
+  border: 1px solid var(--colors-graphite-source-5);
+  width: 100%;
+  height: 0px;
+  margin: 40px 0;
+}
+.link-packages-card-include {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.2;
+  color: var(--colors-graphite-source);
+  margin-bottom: 8px;
+}
+.link-packages-card-include-item {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.2;
+  color: var(--colors-graphite-source);
+  padding-left: 20px;
+  position: relative;
+}
+.link-packages-card-include-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  background-image: url("../image/chek-icons.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+.link-packages-card-item.green .link-packages-card-include-item::before {
+  filter: brightness(0) saturate(100%) invert(67%) sepia(12%) saturate(2236%)
+    hue-rotate(104deg) brightness(94%) contrast(83%);
+}
+.link-packages-card-item.purple .link-packages-card-include-item::before {
+  filter: brightness(0) saturate(100%) invert(29%) sepia(67%) saturate(1911%)
+    hue-rotate(240deg) brightness(108%) contrast(104%);
+}
+.link-packages-card-include-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.link-packages-card-label {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-family: var(--font-family);
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.2;
+  color: var(--colors-base-white);
+}
+.link-packages-card-item.blye .link-packages-card-label {
+  background: var(--colors-blue-source);
+}
+.link-packages-card-item.green .link-packages-card-label {
+  background: var(--colors-green-source);
+}
+.link-packages-card-item.purple .link-packages-card-label {
+  background: var(--colors-purple-source);
+}
+.link-packages-card-chat-btn {
+  border: 1px solid var(--colors-graphite-source);
+  border-radius: 99px;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.2;
+  text-align: center;
+  color: var(--colors-graphite-source);
+}
+.link-packages-card-item.last-card .program-dog-img {
+  margin-bottom: -18px;
+  margin-left: auto;
+  margin-right: -18px;
+  width: 152px;
+  height: 185px;
+  border-radius: 24px;
 }
 @media (min-width: 546px) {
   .wrap-hero-form {
