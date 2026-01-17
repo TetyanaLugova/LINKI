@@ -316,14 +316,17 @@ nav.mobile-menu__nav {
   /* width: 90%; */
   min-width: 288px;
   height: 65px;
-  box-shadow: 0 0 16px 0 #00b36a, 0 0 24px 0 rgba(0, 179, 106, 0.8);
+  box-shadow:
+    0 0 16px 0 #00b36a,
+    0 0 24px 0 rgba(0, 179, 106, 0.8);
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 7px;
 }
 .wrap-input-hero:hover {
-  box-shadow: 0 0 16px 0 rgba(0, 179, 106, 0.2),
+  box-shadow:
+    0 0 16px 0 rgba(0, 179, 106, 0.2),
     0 0 24px 0 rgba(0, 179, 106, 0.2);
   background: var(--colors-base-white-15);
 }
@@ -1218,6 +1221,237 @@ input.hero-input {
   height: 185px;
   border-radius: 24px;
 }
+.guest-services-section {
+  padding: 32px 0;
+}
+.guest-services-title {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  text-align: center;
+  color: var(--colors-graphite-source);
+  margin-bottom: 24px;
+}
+.guest-services-text {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.2;
+  color: var(--colors-graphite-source);
+  margin-bottom: 48px;
+}
+.guest-services-text-specification {
+  border-radius: 24px 24px 24px 24px;
+  padding: 24px;
+  background: var(--colors-graphite-source-5);
+  font-family: var(--font-family);
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.2;
+  color: var(--colors-graphite-source);
+  margin-bottom: 12px;
+}
+.guest-services-btn {
+  border: 1px solid var(--colors-graphite-source);
+  border-radius: 99px;
+  width: 176px;
+  height: 41px;
+  background: var(--colors-graphite-source);
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.2;
+  text-align: center;
+  color: var(--colors-base-white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.start-title {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 44px;
+  line-height: 1;
+  letter-spacing: -0.07em;
+  text-align: center;
+  color: var(--colors-graphite-source);
+  margin-bottom: 16px;
+}
+.myProcessSwiper {
+  padding-top: 80px;
+}
+.process-prev,
+.process-next {
+  position: absolute;
+  top: 25px;
+  color: var(--colors-graphite-source);
+  border-radius: 99px;
+  padding: 20px;
+  border: solid 1px var(--colors-graphite-source);
+}
+.process-prev {
+  left: auto;
+  right: 65px;
+}
+.process-next {
+  right: 12px;
+}
+:root {
+  --swiper-navigation-size: 20px;
+}
+.process-cards-wrapper {
+  padding-left: 12px;
+}
+.process-cards-wrapper .step-number {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.2;
+  text-align: center;
+  color: var(--colors-graphite-source);
+}
+.process-cards-wrapper .card-icon {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}
+.process-cards-wrapper .card-text {
+  font-family: var(--font-family);
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.2;
+  text-align: center;
+  color: var(--colors-graphite-source);
+  text-align: center;
+}
+.process-cards-wrapper .swiper-slide {
+  border-radius: 24px;
+  padding: 24px;
+  width: 256px;
+  height: 256px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+}
+.swiper-slide.card-blue {
+  background: var(--colors-blue-50);
+}
+.swiper-slide.card-gray {
+  background: var(--colors-graphite-50-50);
+}
+.swiper-slide.card-yellow {
+  background: rgba(255, 217, 100, 0.15);
+}
+.swiper-slide.card-white {
+  background: var(--colors-graphite-source-5);
+}
+.swiper-slide.card-indigo {
+  background: var(--colors-blue-source-50-2);
+}
+.swiper-slide.card-green {
+  background: var(--colors-green-source-10);
+}
+.swiper-slide.card-purple {
+  background: var(--colors-purple-source-10);
+}
+.forum-link-section {
+  padding: 48px 0;
+}
+.forum-link-section .link-packages-card-list .link-packages-card-item.blye {
+  min-height: 357px;
+  justify-content: space-between;
+}
+.forum-link-section .link-packages-card-list .link-packages-card-item.green {
+  min-height: 399px;
+  justify-content: space-between;
+}
+.forum-link-section .link-packages-card-list .link-packages-card-item.purple {
+  min-height: 433px;
+  justify-content: space-between;
+}
+.link-packages-card-chat-btn {
+  border-radius: 12px;
+  padding: 12px;
+  background: var(--colors-purple-source-10);
+  border: none;
+  display: inline;
+  text-align: start;
+  font-family: var(--font-family);
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.2;
+  color: var(--colors-graphite-source);
+}
+.chat-start-btn.blye {
+  color: var(--colors-blue-source);
+}
+.guide-title {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 44px;
+  line-height: 1;
+  letter-spacing: -0.07em;
+  color: var(--colors-base-white);
+  margin-bottom: 24px;
+}
+.guide-text {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+  color: var(--colors-base-white);
+}
+.guide-wrap-content {
+  padding: 64px 16px;
+  border-radius: 24px;
+  position: relative;
+  min-height: 415px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image:
+    linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent),
+    url("../image/guide-bg.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; /* Фото завжди заповнює контейнер */
+  transition: all 0.3s ease;
+}
+.other-link-building-section {
+  padding: 64px 0;
+}
+.other-link {
+  margin-bottom: 48px;
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  text-align: center;
+  color: var(--colors-graphite-source);
+}
+.other-link-list .link-packages-card-item .link-packages-card-price {
+  margin-bottom: 40px;
+}
+.advantage-card {
+  width: 256px; /* ФІКСОВАНА ширина слайда */
+  height: 256px;
+  border-radius: 30px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
 @media (min-width: 546px) {
   .wrap-hero-form {
     flex-direction: row;
@@ -1314,4 +1548,66 @@ input.hero-input {
     flex: none; /* Скидаємо мобільні налаштування */
     width: auto;
   }
+}
+
+@media (min-width: 1280px) {
+  .advantages-swiper.grid-mode {
+    overflow: visible;
+  }
+
+  .advantages-swiper.grid-mode .advantages-grid {
+    display: grid !important;
+    /* Створюємо 3 рівні колонки */
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 300px);
+    gap: 24px;
+    /* Вимикаємо флекс Swiper-а */
+    transform: none !important;
+    width: 100% !important;
+  }
+
+  .advantages-swiper.grid-mode .advantage-card {
+    width: 100% !important; /* На десктопі картка займає всю комірку гріда */
+    margin: 0 !important;
+  }
+
+  /* Позиціонування згідно макету */
+  .advantages-swiper.grid-mode .card-dark {
+    grid-column: 3 / 4;
+    grid-row: 1;
+  }
+  .advantages-swiper.grid-mode .card-light.card-wide {
+    grid-column: 1 / 3;
+    grid-row: 2;
+  }
+}
+
+/* Кольори та декор */
+.card-manager {
+  background-color: #e2e6ea;
+}
+.card-blue {
+  background-color: #b2ccff;
+}
+.card-dark {
+  background-color: #2d2d2d;
+  color: #fff;
+}
+.card-green {
+  background-color: #92d3b4;
+}
+.card-light {
+  background-color: #f5f5f5;
+}
+.card-purple {
+  background-color: #d6d1f5;
+}
+
+.card-bg-text {
+  position: absolute;
+  top: 10%;
+  right: 5%;
+  font-size: 80px;
+  font-weight: 900;
+  opacity: 0.15;
 }

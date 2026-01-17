@@ -80,13 +80,6 @@ mainForm.addEventListener("submit", (e) => {
 
   // 2. Показуємо блок подяки
   thankYouContent.style.display = "block";
-
-  // Опціонально: через 5 секунд закриваємо модалку автоматично
-
-  // setTimeout(() => {
-  //   document.getElementById("modalOverlay").classList.remove("is-open");
-  //   document.body.style.overflow = "";
-  // }, 5000);
 });
 
 // Не забудь оновити функцію закриття, щоб при наступному відкритті знову була форма
@@ -124,3 +117,66 @@ chatModal.addEventListener("click", (e) => {
     document.body.style.overflow = "";
   }
 });
+
+const swiper = new Swiper(".myProcessSwiper", {
+  // Головне налаштування для фіксованої ширини:
+  slidesPerView: "auto",
+  spaceBetween: 20, // Відступ між картками
+  freeMode: true, // Дозволяє плавно скролити без жорсткої фіксації (опціонально)
+
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+
+  // Якщо хочете, щоб слайди все одно "приліпали" до країв при скролі:
+  centeredSlides: false,
+  grabCursor: true,
+});
+
+let advantagesSwiper = null;
+
+function handleAdvantagesSwiper() {
+  const swiperElement = document.querySelector(".advantages-swiper");
+  if (!swiperElement) return;
+
+  const isMobile = window.innerWidth < 1280;
+
+  if (isMobile) {
+    // Показуємо Swiper, ховаємо гріду (якщо потрібно)
+    swiperElement.classList.remove("grid-mode");
+    
+    if (!advantagesSwiper) {
+      // Ініціалізація Swiper
+      advantagesSwiper = new Swiper(".advantages-swiper", {
+        slidesPerView: "auto",
+        spaceBetween: 16,
+        grabCursor: true,
+        observer: true,
+        observeParents: true,
+      });
+    }
+  } else {
+    // Перемикаємось на grid режим
+    swiperElement.classList.add("grid-mode");
+    
+    if (advantagesSwiper) {
+      // Знищуємо Swiper
+      advantagesSwiper.destroy(true, true);
+      advantagesSwiper = null;
+
+      // Очищуємо інлайнові стилі Swiper
+      const wrapper = swiperElement.querySelector(".swiper-wrapper");
+      if (wrapper) {
+        wrapper.removeAttribute("style");
+      }
+
+      const slides = swiperElement.querySelectorAll(".swiper-slide");
+      slides.forEach((slide) => slide.removeAttribute("style"));
+    }
+  }
+}
+
+// Використовуємо 'DOMContentLoaded' замість 'load' для швидшого спрацювання
+window.addEventListener("DOMContentLoaded", handleAdvantagesSwiper);
+window.addEventListener("resize", handleAdvantagesSwiper);
