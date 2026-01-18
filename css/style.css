@@ -1897,8 +1897,6 @@ input.hero-input {
   width: 256px;
   height: 256px;
   position: relative;
-
-  /* Дозволяємо картці "прилипати" до краю при гортанні */
   scroll-snap-align: start;
 }
 
@@ -1912,6 +1910,45 @@ input.hero-input {
   width: 256px;
   height: 256px;
   position: relative;
+}
+/* Контейнер для іконки */
+.faq-icon {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease; /* Плавність повороту всієї іконки */
+}
+
+/* Малюємо стрілку через псевдоелемент */
+.faq-icon::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-right: 1.5px solid var(--colors-graphite-source); /* Товщина та колір лінії */
+  border-bottom: 1.5px solid var(--colors-graphite-source);
+  transform: rotate(45deg); /* Початковий стан — стрілка вниз */
+  transition: transform 0.3s ease;
+  margin-top: -4px; /* Коригування центрування */
+}
+
+/* Переворот при відкритті акордіона */
+.faq-accordion-item[open] .faq-icon {
+  transform: rotate(180deg); /* Повертаємо весь контейнер на 180 градусів */
+}
+
+/* Стиль для summary, щоб прибрати стандартну стрілку браузера */
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none; /* Для Firefox */
+  cursor: pointer;
+}
+
+.faq-question::-webkit-details-marker {
+  display: none; /* Для Chrome/Safari */
 }
 @media (min-width: 330px) {
   .worldwide-link-building-list.not-sure-list {
