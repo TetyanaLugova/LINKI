@@ -1035,7 +1035,7 @@ input.hero-input {
   border: 1px dashed var(--colors-graphite-100);
   border-radius: 4px;
   padding: 4px 8px;
-  width: 66px;
+  /* width: 66px; */
   height: 25px;
   box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.02);
   background: var(--colors-base-white);
@@ -1440,6 +1440,31 @@ input.hero-input {
 .other-link-list .link-packages-card-item .link-packages-card-price {
   margin-bottom: 40px;
 }
+.why-linki-section {
+  padding: 32px 0;
+}
+.why-linki-section .link-packages-subtitle {
+  margin-bottom: 0;
+}
+.advantages-prev,
+.advantages-next {
+  position: absolute;
+  top: 25px;
+  color: var(--colors-graphite-source);
+  border-radius: 99px;
+  padding: 20px;
+  border: solid 1px var(--colors-graphite-source);
+}
+.advantages-prev {
+  left: auto;
+  right: 65px;
+}
+.advantages-next {
+  right: 12px;
+}
+:root {
+  --swiper-navigation-size: 20px;
+}
 .advantage-card {
   width: 256px; /* ФІКСОВАНА ширина слайда */
   height: 256px;
@@ -1451,6 +1476,403 @@ input.hero-input {
   position: relative;
   overflow: hidden;
   box-sizing: border-box;
+}
+.card-manager {
+  background: #ced4da;
+}
+.advantage-card.card-blue {
+  background: var(--colors-blue-200);
+}
+.advantage-card.card-green {
+  background: var(--colors-green-500-50);
+}
+.advantage-card.card-purple {
+  background: var(--colors-purple-800-25);
+}
+.card-img-bg {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.advantage-card-text {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.2;
+  color: var(--colors-base-white);
+}
+.advantage-card.card-light .advantage-card-text {
+  color: var(--colors-graphite-source);
+}
+.advantage-card.card-dark {
+  background-image: url("../image/why-bg-3-mob.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  transition: all 0.3s ease;
+}
+.advantage-card.card-light {
+  background-image: url("../image/why-bg-5-mob.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  transition: all 0.3s ease;
+}
+.card-img-top {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.swiper-wrapper.advantages-grid {
+  padding-left: 16px;
+  padding-top: 80px;
+}
+.not-sure-section .worldwide-link-building-wrap {
+  background: #e1f7ee;
+}
+.worldwide-link-building-list.not-sure-list {
+  flex-direction: column;
+}
+.worldwide-link-building-list.not-sure-list .worldwide-link-building-list-item {
+  width: 132px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.not-sure-item .worldwide-link-building-item-top {
+  height: 35px;
+}
+.not-sure-item .worldwide-link-building-item-top::after {
+  top: 35px;
+}
+.not-sure-item .worldwide-link-building-item-bottom {
+  height: 35px;
+  background-size: 100% 100%;
+  padding: 0 10px;
+}
+.not-sure-item .worldwide-link-building-item-top p {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.2;
+  color: var(--colors-graphite-source);
+}
+.not-sure-item .worldwide-link-building-item-bottom p {
+  font-family: var(--font-family);
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 1.2;
+  color: var(--colors-graphite-source);
+  text-align: center;
+}
+.reviews-section {
+  padding: 64px 0;
+}
+.discount-blok {
+  border-radius: 24px;
+  background: var(--colors-graphite-source-5);
+  padding: 32px;
+  position: relative;
+  height: 236px;
+  max-width: 236px;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 32px;
+}
+.discount-title {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.2;
+  color: var(--colors-graphite-source);
+  margin-bottom: 12px;
+}
+.discount-text {
+  font-family: var(--font-family);
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.2;
+  color: var(--colors-graphite-source);
+}
+.discount-img {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.reviews-title {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 44px;
+  line-height: 1;
+  letter-spacing: -0.07em;
+  text-align: center;
+  color: var(--colors-graphite-source);
+  margin-bottom: 12px;
+}
+.reviews-text {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.2;
+  text-align: center;
+  color: var(--colors-graphite-source);
+}
+.reviews-title-wrap {
+  margin-bottom: 32px;
+}
+.reviews-slider {
+  padding-top: 80px;
+  padding-left: 16px;
+}
+
+.reviews-prev,
+.reviews-next {
+  position: absolute;
+  top: 25px;
+  color: var(--colors-graphite-source);
+  border-radius: 99px;
+  padding: 20px;
+  border: solid 1px var(--colors-graphite-source);
+}
+.reviews-prev {
+  left: auto;
+  right: 65px;
+}
+.reviews-next {
+  right: 12px;
+}
+:root {
+  --swiper-navigation-size: 20px;
+}
+.review-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  width: 256px;
+}
+.review-author {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.review-avatar {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 16px;
+}
+.review-avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.review-name {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.2;
+  text-align: center;
+  color: var(--colors-graphite-source);
+}
+.review-position {
+  font-family: var(--font-family);
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.2;
+  text-align: center;
+  color: var(--colors-graphite-source);
+}
+.review-text {
+  font-family: var(--font-family);
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.2;
+  text-align: center;
+  color: var(--colors-graphite-source);
+}
+.review-rating {
+  display: flex;
+  gap: 8px;
+}
+.blog-section {
+  padding: 32px 0;
+  background: linear-gradient(
+    180deg,
+    rgba(206, 212, 218, 0) 0%,
+    /* 0 — повністю прозорий верх */ rgba(206, 212, 218, 0.5) 100%
+      /* 1 — повний колір знизу */
+  );
+}
+.blog-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.blog-title {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 44px;
+  line-height: 1;
+  letter-spacing: -0.07em;
+  text-align: center;
+  color: var(--colors-graphite-source);
+  margin-bottom: 16px;
+}
+.blog-subtitle {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.2;
+  text-align: center;
+  color: var(--colors-graphite-source);
+  margin-bottom: 32px;
+}
+.btn-blog-go {
+  border: 1px solid var(--colors-graphite-source);
+  border-radius: 99px;
+  width: 134px;
+  height: 41px;
+  background: var(--colors-graphite-source);
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.2;
+  text-align: center;
+  color: var(--colors-base-white);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+}
+.blog-card {
+  border-radius: 8px;
+  padding: 12px;
+  width: 256px;
+  background: var(--colors-base-white);
+}
+.blog-card-image {
+  border-radius: 8px;
+  width: 232px;
+  height: 176px;
+  margin-bottom: 30px;
+}
+.blog-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.blog-card-title {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.2;
+  color: var(--colors-graphite-source);
+  margin-bottom: 20px;
+}
+.blog-card-excerpt {
+  font-family: var(--font-family);
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.2;
+  color: var(--colors-graphite-source);
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* Кількість рядків */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 67.2px;
+  margin-bottom: 24px;
+}
+.blog-card-link {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.2;
+  text-align: center;
+  color: var(--colors-blue-source);
+  padding: 10px;
+  display: flex;
+  justify-content: end;
+}
+.blog-controls {
+  position: relative;
+  height: 40px;
+  margin-top: 40px;
+}
+.swiper-pagination-progressbar.swiper-pagination-horizontal.blog-pagination {
+  width: 80%;
+  left: 50% !important;
+  top: 50%;
+  transform: translateX(-50%);
+  position: relative; /* Або absolute, залежно від вашої структури footer */
+  height: 2px;
+  background-color: #e0e0e0;
+  border-radius: 2px;
+}
+.swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+  background: var(--colors-graphite-100);
+  height: 9px;
+}
+/* Контейнер для ліній */
+.blog-pagination.swiper-pagination-bullets {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 50% !important;
+  top: 25%;
+  transform: translateX(-50%);
+  gap: 4px; /* Відстань між лініями */
+  bottom: 0 !important;
+  position: relative !important;
+  width: auto !important;
+}
+
+.blog-pagination .swiper-pagination-bullet {
+  width: 12px;
+  height: 2px;
+  background: #e0e0e0;
+  border-radius: 0;
+  opacity: 1;
+  margin: 0 !important;
+  transition: all 0.3s ease;
+}
+.blog-pagination .swiper-pagination-bullet-active {
+  background: var(--colors-graphite-100);
+  width: 33px;
+  height: 9px;
+}
+.blog-prev,
+.blog-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--colors-graphite-source);
+  border-radius: 99px;
+  padding: 20px;
+  border: solid 1px var(--colors-graphite-source);
+}
+.blog-prev {
+  left: 12px;
+}
+.blog-next {
+  right: 12px;
+}
+:root {
+  --swiper-navigation-size: 20px;
+}
+.faq-section {
+  padding: 64px 0;
+}
+
+@media (min-width: 330px) {
+  .worldwide-link-building-list.not-sure-list {
+    flex-direction: row;
+  }
 }
 @media (min-width: 546px) {
   .wrap-hero-form {
@@ -1468,9 +1890,7 @@ input.hero-input {
 @media (min-width: 560px) {
   .services-card-list {
     display: grid;
-    /* Створюємо дві рівні колонки */
     grid-template-columns: 1fr 1fr;
-    /* Описуємо структуру сітки: перша картка займає два рядки у висоту */
     grid-template-areas:
       "first second"
       "third third"
@@ -1504,14 +1924,11 @@ input.hero-input {
   .services-card-list {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    /* Скидаємо мапу областей, яку задали на 560px */
     grid-template-areas: none;
     gap: 16px;
     max-width: 974px;
     margin: 0 auto;
   }
-
-  /* Скидаємо прив'язку до областей для всіх карток */
   .first-card,
   .second-card,
   .third-card,
@@ -1519,8 +1936,6 @@ input.hero-input {
   .fifth-card {
     grid-area: auto;
   }
-
-  /* Тепер спокійно розставляємо через span */
   .first-card,
   .second-card,
   .third-card {
@@ -1551,63 +1966,66 @@ input.hero-input {
 }
 
 @media (min-width: 1280px) {
-  .advantages-swiper.grid-mode {
-    overflow: visible;
-  }
-
-  .advantages-swiper.grid-mode .advantages-grid {
+  .advantages-grid {
     display: grid !important;
-    /* Створюємо 3 рівні колонки */
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 300px);
     gap: 24px;
-    /* Вимикаємо флекс Swiper-а */
-    transform: none !important;
     width: 100% !important;
+    transform: none !important;
   }
 
-  .advantages-swiper.grid-mode .advantage-card {
-    width: 100% !important; /* На десктопі картка займає всю комірку гріда */
+  .advantage-card {
+    width: 100% !important;
     margin: 0 !important;
   }
 
-  /* Позиціонування згідно макету */
-  .advantages-swiper.grid-mode .card-dark {
-    grid-column: 3 / 4;
+  .card-manager {
+    grid-column: 1 / 2;
     grid-row: 1;
   }
-  .advantages-swiper.grid-mode .card-light.card-wide {
-    grid-column: 1 / 3;
+  .card-blue {
+    grid-column: 2 / 3;
+    grid-row: 1;
+  }
+  .card-dark {
+    grid-column: 3 / 5; /* Займає 3 та 4 стовпці */
+    grid-row: 1;
+  }
+
+  .card-green {
+    grid-column: 1 / 2;
     grid-row: 2;
   }
-}
-
-/* Кольори та декор */
-.card-manager {
-  background-color: #e2e6ea;
-}
-.card-blue {
-  background-color: #b2ccff;
-}
-.card-dark {
-  background-color: #2d2d2d;
-  color: #fff;
-}
-.card-green {
-  background-color: #92d3b4;
-}
-.card-light {
-  background-color: #f5f5f5;
-}
-.card-purple {
-  background-color: #d6d1f5;
-}
-
-.card-bg-text {
-  position: absolute;
-  top: 10%;
-  right: 5%;
-  font-size: 80px;
-  font-weight: 900;
-  opacity: 0.15;
+  .card-light.card-wide {
+    grid-column: 2 / 4;
+    grid-row: 2;
+  }
+  .card-purple {
+    grid-column: 4 / 5;
+    grid-row: 2;
+  }
+  .advantage-card.card-dark {
+    background-image: url("../image/why-bg-3.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    transition: all 0.3s ease;
+  }
+  .advantage-card.card-light {
+    background-image: url("../image/why-bg-5.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    transition: all 0.3s ease;
+  }
+  .swiper-wrapper.advantages-grid {
+    padding-left: 0px;
+    max-width: 1176px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .advantages-swiper .swiper-controls {
+    display: none;
+  }
 }

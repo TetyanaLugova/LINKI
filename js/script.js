@@ -145,7 +145,7 @@ function handleAdvantagesSwiper() {
   if (isMobile) {
     // Показуємо Swiper, ховаємо гріду (якщо потрібно)
     swiperElement.classList.remove("grid-mode");
-    
+
     if (!advantagesSwiper) {
       // Ініціалізація Swiper
       advantagesSwiper = new Swiper(".advantages-swiper", {
@@ -154,12 +154,16 @@ function handleAdvantagesSwiper() {
         grabCursor: true,
         observer: true,
         observeParents: true,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
       });
     }
   } else {
     // Перемикаємось на grid режим
     swiperElement.classList.add("grid-mode");
-    
+
     if (advantagesSwiper) {
       // Знищуємо Swiper
       advantagesSwiper.destroy(true, true);
@@ -180,3 +184,45 @@ function handleAdvantagesSwiper() {
 // Використовуємо 'DOMContentLoaded' замість 'load' для швидшого спрацювання
 window.addEventListener("DOMContentLoaded", handleAdvantagesSwiper);
 window.addEventListener("resize", handleAdvantagesSwiper);
+
+const reviewsSwiper = new Swiper(".reviews-slider", {
+  // Головне налаштування для фіксованої ширини:
+  slidesPerView: "auto",
+  spaceBetween: 20, // Відступ між картками
+  freeMode: true, // Дозволяє плавно скролити без жорсткої фіксації (опціонально)
+
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+
+  // Якщо хочете, щоб слайди все одно "приліпали" до країв при скролі:
+  centeredSlides: false,
+  grabCursor: true,
+});
+
+const blogSwiper = new Swiper(".blog-slider", {
+  // Swiper візьме ширину з CSS .swiper-slide { width: ... }
+  slidesPerView: "auto",
+  spaceBetween: 24, // Відстань між картками
+  centeredSlides: false,
+  grabCursor: true,
+
+  // Навігація стрілками
+  navigation: {
+    nextEl: ".blog-next",
+    prevEl: ".blog-prev",
+  },
+
+  // Пагінація у вигляді лінії (progressbar)
+  pagination: {
+    el: ".blog-pagination",
+    type: "bullets",
+  },
+
+  // Дозволяє плавно скролити мишкою або пальцем
+  freeMode: {
+    enabled: true,
+    sticky: true,
+  },
+});
