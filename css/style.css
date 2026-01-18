@@ -1868,7 +1868,51 @@ input.hero-input {
 .faq-section {
   padding: 64px 0;
 }
+.faq-horizontal-scroll {
+  width: 100%;
+  overflow-x: auto; /* Вмикає горизонтальну прокрутку */
+  overflow-y: hidden;
+  display: block;
+  -webkit-overflow-scrolling: touch; /* Плавний скрол для iOS */
+  padding: 20px 0;
+  /* Приховуємо смугу прокрутки */
+  scrollbar-width: none;
+}
 
+.faq-horizontal-scroll::-webkit-scrollbar {
+  display: none; /* Приховує скролбар для Chrome/Safari */
+}
+
+.faq-card-wrap {
+  display: flex; /* Картки стають в один ряд */
+  flex-wrap: nowrap; /* Забороняємо перенос на новий рядок */
+  padding: 0 20px; /* Відступи, щоб крайні картки не тулилися до екрана */
+}
+
+.faq-card {
+  /* flex-shrink: 0 обов'язково, щоб картки не стискалися */
+  flex: 0 0 300px;
+  margin-right: 16px;
+  border-radius: 24px;
+  width: 256px;
+  height: 256px;
+  position: relative;
+
+  /* Дозволяємо картці "прилипати" до краю при гортанні */
+  scroll-snap-align: start;
+}
+
+/* Налаштовуємо прилипання для всього контейнера */
+.faq-horizontal-scroll {
+  scroll-snap-type: x mandatory;
+}
+
+.faq-card {
+  border-radius: 24px;
+  width: 256px;
+  height: 256px;
+  position: relative;
+}
 @media (min-width: 330px) {
   .worldwide-link-building-list.not-sure-list {
     flex-direction: row;
