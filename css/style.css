@@ -1868,87 +1868,362 @@ input.hero-input {
 .faq-section {
   padding: 64px 0;
 }
+.faq-title {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 44px;
+  line-height: 1;
+  letter-spacing: -0.07em;
+  text-align: center;
+  color: var(--colors-graphite-source);
+  margin-bottom: 32px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
 .faq-horizontal-scroll {
   width: 100%;
-  overflow-x: auto; /* Вмикає горизонтальну прокрутку */
+  overflow-x: auto;
   overflow-y: hidden;
   display: block;
-  -webkit-overflow-scrolling: touch; /* Плавний скрол для iOS */
+  -webkit-overflow-scrolling: touch;
   padding: 20px 0;
-  /* Приховуємо смугу прокрутки */
   scrollbar-width: none;
+  margin-bottom: 32px;
 }
-
 .faq-horizontal-scroll::-webkit-scrollbar {
-  display: none; /* Приховує скролбар для Chrome/Safari */
+  display: none;
 }
-
 .faq-card-wrap {
-  display: flex; /* Картки стають в один ряд */
-  flex-wrap: nowrap; /* Забороняємо перенос на новий рядок */
-  padding: 0 20px; /* Відступи, щоб крайні картки не тулилися до екрана */
+  display: flex;
+  flex-wrap: nowrap;
+  padding: 0;
+  padding-left: 16px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .faq-card {
-  /* flex-shrink: 0 обов'язково, щоб картки не стискалися */
-  flex: 0 0 300px;
+  flex: 0 0 256px;
   margin-right: 16px;
   border-radius: 24px;
   width: 256px;
   height: 256px;
   position: relative;
   scroll-snap-align: start;
+  padding: 24px;
 }
-
-/* Налаштовуємо прилипання для всього контейнера */
 .faq-horizontal-scroll {
   scroll-snap-type: x mandatory;
 }
 
-.faq-card {
-  border-radius: 24px;
-  width: 256px;
-  height: 256px;
-  position: relative;
+.faq-card.blye {
+  background: var(--colors-blue-100);
+  display: flex;
+  align-items: center;
 }
-/* Контейнер для іконки */
+.faq-card.yellow {
+  background: rgba(255, 217, 100, 0.1);
+  display: flex;
+  align-items: center;
+}
+.faq-card.green {
+  background: var(--colors-green-source-10);
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+.faq-card.blye p,
+.faq-card.yellow p {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.2;
+  color: var(--colors-graphite-source);
+  margin-top: 50px;
+}
+.faq-card.blye img {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.faq-card.yellow img {
+  position: absolute;
+  bottom: 0;
+  right: -75px;
+}
+.faq-card.green h3 {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.2;
+  color: var(--colors-graphite-source);
+  margin-bottom: 12px;
+}
+.faq-card.green p {
+  font-family: var(--font-family);
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.2;
+  color: var(--colors-graphite-source);
+  margin-bottom: 24px;
+}
+.faq-btn-chat {
+  border: 1px solid var(--colors-green-source);
+  border-radius: 99px;
+  width: 147px;
+  height: 41px;
+  background: var(--colors-green-source);
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.2;
+  text-align: center;
+  color: var(--colors-base-white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.faq-accordion-container {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.faq-accordion-item {
+  border: 1px solid var(--colors-graphite-50);
+  border-radius: 12px;
+  padding: 24px 32px;
+  background: var(--colors-base-white);
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.2;
+  color: var(--colors-graphite-source);
+}
+.faq-answer {
+  font-family: var(--font-family);
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.2;
+  color: var(--colors-graphite-source);
+  margin-top: 20px;
+}
 .faq-icon {
   width: 20px;
   height: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.3s ease; /* Плавність повороту всієї іконки */
+  transition: transform 0.3s ease;
+  margin-left: 20px;
 }
-
 /* Малюємо стрілку через псевдоелемент */
 .faq-icon::after {
   content: "";
   width: 8px;
   height: 8px;
-  border-right: 1.5px solid var(--colors-graphite-source); /* Товщина та колір лінії */
+  border-right: 1.5px solid var(--colors-graphite-source);
   border-bottom: 1.5px solid var(--colors-graphite-source);
-  transform: rotate(45deg); /* Початковий стан — стрілка вниз */
+  transform: rotate(45deg);
   transition: transform 0.3s ease;
-  margin-top: -4px; /* Коригування центрування */
+  margin-top: -4px;
 }
-
-/* Переворот при відкритті акордіона */
 .faq-accordion-item[open] .faq-icon {
-  transform: rotate(180deg); /* Повертаємо весь контейнер на 180 градусів */
+  transform: rotate(180deg);
 }
-
-/* Стиль для summary, щоб прибрати стандартну стрілку браузера */
 .faq-question {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  list-style: none; /* Для Firefox */
+  list-style: none;
   cursor: pointer;
 }
-
 .faq-question::-webkit-details-marker {
-  display: none; /* Для Chrome/Safari */
+  display: none;
+}
+.about-section {
+  padding: 32px 0;
+}
+.about-title {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 44px;
+  line-height: 1;
+  letter-spacing: -0.07em;
+  color: var(--colors-graphite-source);
+  margin-bottom: 32px;
+}
+.about-intro {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.2;
+  color: var(--colors-graphite-source);
+}
+.about-header {
+  margin-bottom: 48px;
+}
+.about-content-wrap {
+  border-left: 4px solid var(--colors-green-source);
+  padding: 0px 0px 0px 24px;
+}
+.about-subtitle {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.2;
+  color: var(--colors-graphite-source);
+  margin-bottom: 12px;
+}
+.about-text {
+  font-family: var(--font-family);
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.2;
+  color: var(--colors-graphite-source);
+}
+.about-block {
+  margin-bottom: 32px;
+}
+.about-list {
+  margin-top: 12px;
+  font-family: var(--font-family);
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.2;
+  color: var(--colors-graphite-source);
+}
+.about-list li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 2px;
+}
+.about-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #333;
+  font-weight: bold;
+}
+
+.footer {
+  position: relative;
+  /* background-color: #000;  */
+  color: #ffffff;
+  padding: 60px 0 140px;
+  overflow: hidden;
+}
+.footer-brand {
+  margin-bottom: 32px;
+}
+.footer-main-title {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  text-align: center;
+  color: var(--colors-base-white);
+  margin-bottom: 12px;
+}
+.footer-description {
+  font-family: var(--font-family);
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.2;
+  text-align: center;
+  color: var(--colors-base-white-50);
+  margin-bottom: 32px;
+}
+.footer-contact {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.2;
+  text-align: center;
+  color: var(--colors-base-white);
+}
+.footer-contact a {
+  color: var(--colors-base-white);
+}
+.footer-info {
+  margin-bottom: 32px;
+}
+.footer-copy {
+  font-family: var(--font-family);
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 1.2;
+  text-align: center;
+  color: var(--colors-base-white-50);
+  margin-bottom: 16px;
+}
+.footer-mascot {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+}
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8;
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.footer-nav a {
+  padding: 12px;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.2;
+  text-align: center;
+  color: var(--colors-base-white);
+}
+/* Налаштування відео-контейнера */
+.footer-video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Має бути нижче за контент, але вище за основу */
+}
+.footer-video-bg video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Відео заповнює весь простір без деформації */
+}
+/* Затемнення відео, щоб білий текст добре читався */
+.footer-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* background: linear-gradient(
+    180deg,
+    rgba(10, 15, 20, 0.7) 0%,
+    rgba(10, 15, 20, 0.9) 100%
+  ); */
+}
+/* Контент футера має бути над відео */
+.footer-content {
+  position: relative;
+  z-index: 2;
+}
+/* Корекція для собаки-маскота */
+.footer-mascot {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 120px;
+  z-index: 3; /* Собака поверх відео */
 }
 @media (min-width: 330px) {
   .worldwide-link-building-list.not-sure-list {
