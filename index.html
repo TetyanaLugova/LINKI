@@ -61,7 +61,7 @@
         </ul>
       </nav>
       <div class="header-btn header-btn-deck">
-        <button class="search-btn">
+        <button class="search-btn" id="searchBtnDesktop">
           <img
             src="image/search-icon.svg"
             alt="Search"
@@ -69,8 +69,21 @@
             height="20"
           />
         </button>
-        <button class="nav-button">Get Started</button>
+        <button class="nav-button btn-get-modal">
+          Get Started <img src="image/chat-arrow-icon.svg" alt="" />
+        </button>
       </div>
+
+      <div class="search-overlay" id="searchOverlay">
+        <div class="search-container">
+          <input type="text" placeholder="Search" class="search-input" />
+          <img src="image/search-arrow.svg" alt="" class="search-enter-icon" />
+        </div>
+        <button class="close-search" id="closeSearch">
+          <img src="image/close-icon.svg" alt="Close" width="24" height="24" />
+        </button>
+      </div>
+
       <button class="btn-mob-menu" id="openMenu">
         MENU <img src="image/burger-icon.svg" alt="Open" />
       </button>
@@ -125,13 +138,11 @@
             <div class="wrap-input-hero">
               <img src="image/email-input-icon.svg" alt="" />
               <input type="email" placeholder="YOUR EMAIL" class="hero-input" />
-              <button class="input-hero-submit-arrow">
+              <span class="input-hero-submit-arrow">
                 <img src="image/input-hero-arrow.svg" alt="" />
-              </button>
+              </span>
             </div>
-            <button class="hero-btn-modal btn-get-modal">
-              GET A CONSULTATION
-            </button>
+            <button class="hero-btn-modal">GET A CONSULTATION</button>
           </div>
           <div class="benefits">
             <div class="hero cards-wrapper">

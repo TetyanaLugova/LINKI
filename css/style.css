@@ -139,6 +139,9 @@ header {
 .header-btn-deck {
   display: none;
 }
+.search-overlay {
+  display: none;
+}
 .btn-mob-menu {
   border: 1px solid var(--colors-base-white);
   border-radius: 99px;
@@ -367,12 +370,12 @@ input.hero-input {
 .cards-wrapper::-webkit-scrollbar {
   display: none;
 }
-.cards-track {
+.hero.cards-track {
   display: flex;
   gap: 8px;
   flex-wrap: nowrap;
 }
-.card {
+.hero.card {
   flex: 0 0 176px;
   height: 176px;
   border-radius: 12px;
@@ -2305,23 +2308,148 @@ input.hero-input {
 }
 /* На десктопі повертаємо звичайний вигляд */
 @media (min-width: 1024px) {
-  .cards-wrapper {
+  /* .cards-wrapper {
     overflow: visible;
-  }
+  } */
 
-  .cards-track {
+  /* .cards-track {
     display: grid;
-    grid-template-columns: repeat(5, 1fr); /* 5 карток в ряд */
+    grid-template-columns: repeat(5, 1fr);
     gap: 20px;
   }
 
   .card {
-    flex: none; /* Скидаємо мобільні налаштування */
+    flex: none; 
     width: auto;
-  }
+  } */
 }
 
 @media (min-width: 1280px) {
+  header {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1001;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 52px;
+    height: 89px;
+    width: 100%;
+    max-width: 1540px;
+  }
+
+  .btn-mob-menu {
+    display: none;
+  }
+  .nav-deck {
+    display: flex;
+  }
+  .header-btn-deck {
+    display: flex;
+    gap: 4px;
+  }
+  .nav-deck .nav-list {
+    display: flex;
+  }
+  .nav-deck .nav-list .nav-item {
+    padding: 12px;
+  }
+  .nav-deck .nav-list .nav-item a {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.2;
+    text-align: center;
+    color: var(--colors-base-white);
+  }
+  .nav-button {
+    border: 1px solid var(--colors-base-white);
+    border-radius: 99px;
+    width: 156px;
+    height: 41px;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.2;
+    text-align: center;
+    color: var(--colors-base-white);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 10px;
+  }
+  .search-btn {
+    border: 1px solid var(--colors-base-white);
+    border-radius: 99px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Контейнер пошуку, який перекриває хедер */
+  .search-overlay {
+    position: absolute;
+    top: 0;
+    right: 20px;
+    width: 80%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    /* background-color: rgba(51, 51, 51, 0.8); */
+    backdrop-filter: blur(10px); /* Сила розмиття */
+    -webkit-backdrop-filter: blur(10px);
+  }
+  /* Клас для активації через JS */
+  .search-overlay.is-active {
+    opacity: 1;
+    visibility: visible;
+  }
+  .search-container {
+    position: relative;
+    flex-grow: 1;
+    display: flex;
+    justify-content: end;
+    margin-right: 20px;
+  }
+  .search-input {
+    width: 100%;
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 12px 20px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+  }
+  .close-search {
+    background: transparent;
+    border: 1px solid #ffffff4d;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .hero.card {
+    flex: 0 0 276px;
+    height: 276px;
+  }
+  .cards-wrapper {
+    max-width: 1479px;
+    padding-left: 50px;
+  }
   .advantages-grid {
     display: grid !important;
     grid-template-columns: repeat(4, 1fr);
@@ -2344,7 +2472,7 @@ input.hero-input {
     grid-column: 2 / 3;
     grid-row: 1;
   }
-  .card-dark {
+  .advantage-card.card-dark {
     grid-column: 3 / 5; /* Займає 3 та 4 стовпці */
     grid-row: 1;
   }

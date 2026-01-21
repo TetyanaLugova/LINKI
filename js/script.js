@@ -32,6 +32,31 @@ searchToggle.addEventListener("click", () => {
   }
 });
 
+// Десктопний пошук
+const searchBtnDesktop = document.getElementById("searchBtnDesktop");
+const searchOverlay = document.getElementById("searchOverlay");
+const closeSearch = document.getElementById("closeSearch");
+const searchInput = searchOverlay.querySelector(".search-input");
+
+// Відкрити пошук
+searchBtnDesktop.addEventListener("click", () => {
+  searchOverlay.classList.add("is-active");
+  // Робимо фокус на інпут відразу після відкриття
+  setTimeout(() => searchInput.focus(), 100);
+});
+
+// Закрити пошук
+closeSearch.addEventListener("click", () => {
+  searchOverlay.classList.remove("is-active");
+});
+
+// Закриття через Esc
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && searchOverlay.classList.contains("is-active")) {
+    searchOverlay.classList.remove("is-active");
+  }
+});
+
 // Вибираємо ВСІ кнопки з цим класом
 const modalTriggers = document.querySelectorAll(".btn-get-modal");
 const modalOverlay = document.getElementById("modalOverlay");
