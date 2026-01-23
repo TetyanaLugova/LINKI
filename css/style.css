@@ -398,7 +398,11 @@ input.hero-input {
   background: var(--colors-blue-source-50);
 }
 .hero.card-blue img {
-  height: 100px;
+  height: 101px;
+  width: 100%;
+  margin-left: 15px;
+}
+.hero.card-dark img {
   width: 100%;
 }
 .hero.card-bg {
@@ -2278,6 +2282,33 @@ input.hero-input {
     flex-direction: row;
     justify-content: space-evenly;
   }
+  .worldwide-link-building-wrap-top {
+    display: flex;
+    align-items: center;
+    /* gap: 10px; */
+  }
+  .worldwide-link-building-header-wrap {
+  }
+  .worldwide-link-building-header-wrap {
+    padding-top: 20px;
+    width: 47%;
+  }
+  .worldwide-link-building-dog-chat-wrap {
+    width: 50%;
+  }
+  .worldwide-link-building-dog-img {
+    height: 110px;
+  }
+  .worldwide-link-building-btn {
+    width: 199px;
+  }
+  .worldwide-link-building-wrap-chat-text {
+    font-size: 13px;
+  }
+  .chat-dog-home-img {
+    width: auto;
+    height: auto;
+  }
 }
 @media (min-width: 824px) {
   .services-card-list {
@@ -2442,13 +2473,88 @@ input.hero-input {
     justify-content: center;
     cursor: pointer;
   }
+  .hero.cards-track {
+    gap: 24px;
+  }
   .hero.card {
     flex: 0 0 276px;
     height: 276px;
   }
   .cards-wrapper {
-    max-width: 1479px;
+    max-width: 1490px;
     padding-left: 50px;
+  }
+  .hero.card-blue img {
+    height: 164px;
+    width: 100%;
+  }
+  .hero-card-text {
+    padding: 32px;
+    font-size: 20px;
+  }
+
+  .services-container {
+    max-width: 1176px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .services-card-list {
+    max-width: 1176px;
+  }
+  .wpap-servces-header {
+    position: relative;
+  }
+  .services-img-dog {
+    position: absolute;
+    left: 0;
+    bottom: -100px;
+  }
+  .services-title {
+    max-width: 576px;
+    font-size: 53px;
+  }
+  .services-text {
+    max-width: 576px;
+    font-size: 18px;
+    margin-bottom: 100px;
+  }
+  .cta-title {
+    font-size: 36px;
+  }
+  .wrap-chat-position {
+    flex-direction: row-reverse;
+    justify-content: center;
+  }
+  .worldwide-link-building-wrap {
+    display: flex;
+  }
+  .worldwide-link-building-wrap {
+    background-image: url(../image/worldwide-bg.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 64px 76px;
+    position: relative;
+  }
+  .worldwide-link-building-dog-img {
+    position: absolute;
+    bottom: 0;
+  }
+  .worldwide-link-building-list {
+    gap: 16px;
+    width: 50%;
+    align-items: center;
+    padding: 70px 40px 60px 0;
+  }
+  .worldwide-link-building-list-item {
+    width: 126px;
+  }
+  .worldwide-link-building-item-top {
+    height: 33px;
+  }
+  .worldwide-link-building-item-bottom {
+    height: 33px;
+    background-size: 100% 100%;
   }
   .advantages-grid {
     display: grid !important;
