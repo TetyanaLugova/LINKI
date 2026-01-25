@@ -211,19 +211,26 @@ window.addEventListener("DOMContentLoaded", handleAdvantagesSwiper);
 window.addEventListener("resize", handleAdvantagesSwiper);
 
 const reviewsSwiper = new Swiper(".reviews-slider", {
-  // Головне налаштування для фіксованої ширини:
+  // Налаштування для маленьких екранів (до 1279px)
   slidesPerView: "auto",
-  spaceBetween: 20, // Відступ між картками
-  freeMode: true, // Дозволяє плавно скролити без жорсткої фіксації (опціонально)
+  spaceBetween: 20,
+  freeMode: true,
+  grabCursor: true,
 
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
 
-  // Якщо хочете, щоб слайди все одно "приліпали" до країв при скролі:
-  centeredSlides: false,
-  grabCursor: true,
+  // Налаштування для великих екранів
+  breakpoints: {
+    // Коли ширина вікна >= 1280px
+    1280: {
+      slidesPerView: 1,
+      centeredSlides: true, // Опціонально, щоб єдиний слайд був по центру
+      freeMode: false, // На одному слайді краще вимкнути вільний скрол
+    },
+  },
 });
 
 const blogSwiper = new Swiper(".blog-slider", {
