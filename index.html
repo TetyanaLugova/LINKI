@@ -36,61 +36,72 @@
   <body>
     <!-- HEADER -->
     <header>
-      <a href="index.html" class="nav-logo-link">
-        <img src="image/logo.svg" alt="Linki" class="nav__logo-image" />
-      </a>
-      <nav class="nav nav-deck">
-        <ul class="nav-list">
-          <li class="nav-item">
-            <a href="index.html" class="nav__link">Home</a>
-          </li>
-          <li class="nav-item">
-            <a href="#link-insertion" class="nav__link">Link insertion</a>
-          </li>
-          <li class="nav-item">
-            <a href="#guest-posts" class="nav__link">Guest posts</a>
-          </li>
-          <li class="nav-item">
-            <a href="#link-building-packages" class="nav__link"
-              >Link Building Packages</a
-            >
-          </li>
-          <li class="nav-item">
-            <a href="blog.html" class="nav__link nav__link--button">Blog</a>
-          </li>
-        </ul>
-      </nav>
-      <div class="header-btn header-btn-deck">
-        <button class="search-btn" id="searchBtnDesktop">
-          <img
-            src="image/search-icon.svg"
-            alt="Search"
-            width="20"
-            height="20"
-          />
-        </button>
-        <button class="nav-button btn-get-modal">
-          Get Started <img src="image/chat-arrow-icon.svg" alt="" />
-        </button>
-      </div>
-
-      <div class="search-overlay" id="searchOverlay">
-        <div class="search-container">
-          <input type="text" placeholder="Search" class="search-input" />
-          <img src="image/search-arrow.svg" alt="" class="search-enter-icon" />
+      <div class="header-container">
+        <a href="index.html" class="nav-logo-link">
+          <img src="image/logo.svg" alt="Linki" class="nav__logo-image" />
+        </a>
+        <nav class="nav nav-deck">
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="index.html" class="nav__link">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="#link-insertion" class="nav__link">Link insertion</a>
+            </li>
+            <li class="nav-item">
+              <a href="#guest-posts" class="nav__link">Guest posts</a>
+            </li>
+            <li class="nav-item">
+              <a href="#link-building-packages" class="nav__link"
+                >Link Building Packages</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="blog.html" class="nav__link nav__link--button">Blog</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="header-btn header-btn-deck">
+          <button class="search-btn" id="searchBtnDesktop">
+            <img
+              src="image/search-icon.svg"
+              alt="Search"
+              width="20"
+              height="20"
+            />
+          </button>
+          <button class="nav-button btn-get-modal">
+            Get Started <img src="image/chat-arrow-icon.svg" alt="" />
+          </button>
         </div>
-        <button class="close-search" id="closeSearch">
-          <img src="image/close-icon.svg" alt="Close" width="24" height="24" />
+
+        <div class="search-overlay" id="searchOverlay">
+          <div class="search-container">
+            <input type="text" placeholder="Search" class="search-input" />
+            <img
+              src="image/search-arrow.svg"
+              alt=""
+              class="search-enter-icon"
+            />
+          </div>
+          <button class="close-search" id="closeSearch">
+            <img
+              src="image/close-icon.svg"
+              alt="Close"
+              width="24"
+              height="24"
+            />
+          </button>
+        </div>
+
+        <button class="btn-mob-menu" id="openMenu">
+          MENU <img src="image/burger-icon.svg" alt="Open" />
+        </button>
+
+        <button class="btn-mob-menu btn-close-hidden" id="closeMenu">
+          CLOSE <img src="image/close-icon.svg" alt="Close" />
         </button>
       </div>
-
-      <button class="btn-mob-menu" id="openMenu">
-        MENU <img src="image/burger-icon.svg" alt="Open" />
-      </button>
-
-      <button class="btn-mob-menu btn-close-hidden" id="closeMenu">
-        CLOSE <img src="image/close-icon.svg" alt="Close" />
-      </button>
     </header>
 
     <div class="mobile-menu" id="mobileMenu">

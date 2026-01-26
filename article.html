@@ -1,0 +1,668 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="icon" type="image/svg+xml" href="image/favicon.svg" />
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link
+      rel="preload"
+      href="fonts/geologica-v5-latin-regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="blog-page">
+      <div class="header-container">
+        <a href="index.html" class="nav-logo-link">
+          <img src="image/logo.svg" alt="Linki" class="nav__logo-image" />
+        </a>
+        <nav class="nav nav-deck">
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="index.html" class="nav__link">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="#link-insertion" class="nav__link">Link insertion</a>
+            </li>
+            <li class="nav-item">
+              <a href="#guest-posts" class="nav__link">Guest posts</a>
+            </li>
+            <li class="nav-item">
+              <a href="#link-building-packages" class="nav__link"
+                >Link Building Packages</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="blog.html" class="nav__link nav__link--button">Blog</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="header-btn header-btn-deck">
+          <button class="search-btn" id="searchBtnDesktop">
+            <img
+              src="image/search-icon.svg"
+              alt="Search"
+              width="20"
+              height="20"
+            />
+          </button>
+          <button class="nav-button btn-get-modal">
+            Get Started <img src="image/chat-arrow-icon.svg" alt="" />
+          </button>
+        </div>
+
+        <div class="search-overlay" id="searchOverlay">
+          <div class="search-container">
+            <input type="text" placeholder="Search" class="search-input" />
+            <img
+              src="image/search-arrow.svg"
+              alt=""
+              class="search-enter-icon"
+            />
+          </div>
+          <button class="close-search" id="closeSearch">
+            <img
+              src="image/close-icon.svg"
+              alt="Close"
+              width="24"
+              height="24"
+            />
+          </button>
+        </div>
+
+        <button class="btn-mob-menu" id="openMenu">
+          MENU <img src="image/burger-icon.svg" alt="Open" />
+        </button>
+
+        <button class="btn-mob-menu btn-close-hidden" id="closeMenu">
+          CLOSE <img src="image/close-icon.svg" alt="Close" />
+        </button>
+      </div>
+    </header>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <div class="mobile-menu__search-wrapper">
+        <button type="button" class="search-toggle-btn" id="searchToggle">
+          <span class="search-text">SEARCH</span>
+          <img src="image/search-icon.svg" class="icon-search" alt="Search" />
+          <span class="icon-close-search"
+            ><img src="image/close-icon.svg" alt=""
+          /></span>
+        </button>
+
+        <div class="search-dropdown" id="searchDropdown">
+          <input type="text" placeholder="Search" class="mobile-menu__input" />
+          <button class="search-submit-arrow">
+            <img src="image/search-input-mob.svg" alt="" />
+          </button>
+        </div>
+      </div>
+      <nav class="mobile-menu__nav">
+        <ul class="mobile-menu__list">
+          <li class="mobile-menu-item"><a href="index.html">Home</a></li>
+          <li class="mobile-menu-item">
+            <a href="#link-insertion">Link insertion</a>
+          </li>
+          <li class="mobile-menu-item">
+            <a href="#guest-posts">Guest posts</a>
+          </li>
+          <li class="mobile-menu-item">
+            <a href="#link-building-packages">Link Building Packages</a>
+          </li>
+          <li class="mobile-menu-item"><a href="blog.html">Blog</a></li>
+        </ul>
+      </nav>
+    </div>
+    <!-- MAIN -->
+    <main>
+      <div class="cotainer">
+        <div class="bread-crumbs">
+          <a class="bread-crumbs-link" href="index.html">Home</a>
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M4.64645 14.3536C4.45118 14.1583 4.45118 13.8417 4.64645 13.6464L10.2929 8L4.64645 2.35355C4.45119 2.15829 4.45119 1.84171 4.64645 1.64645C4.84171 1.45118 5.15829 1.45118 5.35355 1.64645L11.3536 7.64645C11.5488 7.84171 11.5488 8.15829 11.3536 8.35355L5.35355 14.3536C5.15829 14.5488 4.84171 14.5488 4.64645 14.3536Z"
+              fill="#333333"
+            />
+          </svg>
+          <a class="bread-crumbs-link" href="blog.html">Blog</a>
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M4.64645 14.3536C4.45118 14.1583 4.45118 13.8417 4.64645 13.6464L10.2929 8L4.64645 2.35355C4.45119 2.15829 4.45119 1.84171 4.64645 1.64645C4.84171 1.45118 5.15829 1.45118 5.35355 1.64645L11.3536 7.64645C11.5488 7.84171 11.5488 8.15829 11.3536 8.35355L5.35355 14.3536C5.15829 14.5488 4.84171 14.5488 4.64645 14.3536Z"
+              fill="#333333"
+            />
+          </svg>
+          <span class="bread-crumbs-current"
+            >What Is Outreach and How to Use It to Promote a Website</span
+          >
+        </div>
+      </div>
+      <section class="article-section">
+        <div class="wrap-article">
+          <article class="article-content">
+            <div class="date-article">May 5, 2025</div>
+            <h1 class="article-title">
+              What Is Outreach and How to Use It to Promote a Website
+            </h1>
+            <div class="article-img-wrap">
+              <img class="article-img" src="image/article-img.png" alt="" />
+            </div>
+
+            <p class="article-text">
+              In the ever-evolving landscape of digital marketing, link building
+              remains a crucial strategy for enhancing website authority and
+              improving search engine rankings. However, with search engines
+              becoming increasingly sophisticated, it's essential to adopt safe
+              and effective link building practices. In this comprehensive
+              guide, we'll explore the best strategies for link building in 2024
+              that prioritize quality over quantity.
+            </p>
+            <div class="quote">
+              <h2 class="article-subtitle">Webmasters usually opt</h2>
+              <p class="article-text">
+                Webmasters usually opt for the simplest methods: links from
+                directory sites, social media profiles, forum links, etc. Few go
+                as far as guest posts — let alone outreach. The challenge is
+                that without experience, it’s difficult to develop a
+                cost-effective strategy for acquiring high-trust backlinks.
+              </p>
+              <p class="article-text">
+                In this article, we’ll explore one of the most complex
+                link-building techniques. We’ll explain why outreach is
+                essential for website promotion, how to communicate with site
+                owners, and how to streamline the process.
+              </p>
+            </div>
+            <h2 class="article-subtitle">What Is Outreach?</h2>
+            <ul class="article-list">
+              <li class="article-item">
+                Outreach is a link-building strategy based on direct
+                communication with other webmasters. It allows you to acquire
+                trusted links from resources that don’t accept submissions from
+                link exchanges or aren’t listed on such platforms at all.
+              </li>
+              <li class="article-item">
+                One of the key benefits of outreach is that it helps boost brand
+                awareness and attract targeted traffic. For instance, posting a
+                short feature about an email marketing service on a
+                well-trafficked webmaster blog can lead to interested users
+                eventually becoming customers.
+              </li>
+              <li class="article-item">
+                Outreach, along with forum links, guest posts,
+                <a class="link-article" href="">link insertion</a>, and other
+                <a class="link-article" href="">link-building methods</a>, is
+                aimed not only at strengthening a project’s backlink profile but
+                also at traditional PR. When an optimizer selects relevant
+                platforms for promotion, the impact can be highly effective.
+              </li>
+            </ul>
+            <h2 class="article-subtitle">
+              The formula for effective outreach consists of several components:
+            </h2>
+            <ol class="article-list-numbered">
+              <li class="article-item-numbered">a list of trusted donors,</li>
+              <li class="article-item-numbered">
+                personalized email templates,
+              </li>
+              <li class="article-item-numbered">
+                tools for sending proposals and tracking key metrics,
+              </li>
+              <li class="article-item-numbered">
+                a budget for outreach campaigns.
+              </li>
+            </ol>
+            <h2 class="article-subtitle">Webmasters usually opt</h2>
+            <p class="article-text">
+              Simply compiling a list of sites and sending a template email is a
+              dead-end approach. You need to thoroughly analyze the platforms,
+              identify the highest-quality ones, and develop a detailed
+              strategy. Taking the easiest route will yield minimal results.
+            </p>
+            <p class="article-text">
+              The method for selecting outreach platforms depends on the
+              campaign’s goals. If the aim is to boost link authority, the donor
+              site’s backlink metrics take priority. If the goal is to increase
+              brand awareness, even spammy or relatively new sites may be
+              suitable.
+            </p>
+            <p class="article-text">
+              At the second step, you will definitely need to expand the list of
+              potential donors, as the analysis process often reveals less
+              obvious projects that didn’t come up during the initial deep dive
+              into the niche.
+            </p>
+            <div class="faq-accordion-container">
+              <details class="faq-accordion-item">
+                <summary class="faq-question">
+                  What backlinks building services should I choose?
+                  <span class="faq-icon"></span>
+                </summary>
+                <div class="faq-answer">
+                  <p>
+                    If you don`t know what package and strategy to choose, leave
+                    this issue one way to our manager. Based on your site goals
+                    and budget he will give you best recommendations back for a
+                    link building campaign
+                  </p>
+                </div>
+              </details>
+
+              <details class="faq-accordion-item">
+                <summary class="faq-question">
+                  What are the benefits of Brandcitations.com?
+                  <span class="faq-icon"></span>
+                </summary>
+                <div class="faq-answer">
+                  <p>
+                    If you don`t know what package and strategy to choose, leave
+                    this issue one way to our manager. Based on your site goals
+                    and budget he will give you best recommendations back for a
+                    link building campaign
+                  </p>
+                </div>
+              </details>
+
+              <details class="faq-accordion-item">
+                <summary class="faq-question">
+                  Can you provide contextual natural and high quality backlinks?
+                  <span class="faq-icon"></span>
+                </summary>
+                <div class="faq-answer">
+                  <p>
+                    If you don`t know what package and strategy to choose, leave
+                    this issue one way to our manager. Based on your site goals
+                    and budget he will give you best recommendations back for a
+                    link building campaign
+                  </p>
+                </div>
+              </details>
+            </div>
+            <h2 class="article-subtitle">What Is Outreach?</h2>
+            <ul class="article-list">
+              <li class="article-item">
+                Outreach is a link-building strategy based on direct
+                communication with other webmasters. It allows you to acquire
+                trusted links from resources that don’t accept submissions from
+                link exchanges or aren’t listed on such platforms at all.
+              </li>
+              <li class="article-item">
+                One of the key benefits of outreach is that it helps boost brand
+                awareness and attract targeted traffic. For instance, posting a
+                short feature about an email marketing service on a
+                well-trafficked webmaster blog can lead to interested users
+                eventually becoming customers.One of the key benefits of
+                outreach is that it helps boost brand awareness and attract
+                targeted traffic. For instance, posting a short feature about an
+                email marketing service on a well-trafficked webmaster blog can
+                lead to interested users eventually becoming customers.
+              </li>
+              <li class="article-item">
+                Outreach, along with forum links, guest posts, link insertion,
+                and other link-building methods, is aimed not only at
+                strengthening a project’s backlink profile but also at
+                traditional PR. When an optimizer selects relevant platforms for
+                promotion, the impact can be highly effective.
+              </li>
+            </ul>
+            <h2 class="article-subtitle">Webmasters usually opt</h2>
+            <p class="article-text">
+              Simply compiling a list of sites and sending a template email is a
+              dead-end approach. You need to thoroughly analyze the platforms,
+              identify the highest-quality ones, and develop a detailed
+              strategy. Taking the easiest route will yield minimal results.
+            </p>
+            <p class="article-text">
+              The method for selecting outreach platforms depends on the
+              campaign’s goals. If the aim is to boost link authority, the donor
+              site’s backlink metrics take priority. If the goal is to increase
+              brand awareness, even spammy or relatively new sites may be
+              suitable.
+            </p>
+            <p class="article-text">
+              At the second step, you will definitely need to expand the list of
+              potential donors, as the analysis process often reveals less
+              obvious projects that didn’t come up during the initial deep dive
+              into the niche.
+            </p>
+          </article>
+          <aside class="sidebar-promo">
+            <div class="promo-card">
+              <div class="promo-header">
+                <img src="image/thank-you-dog.png" alt="" class="promo-image" />
+              </div>
+
+              <div class="promo-content">
+                <h3 class="promo-title">Do you want to be in TOP?</h3>
+
+                <p class="promo-description">
+                  We can analyse your site, help you with link building strategy
+                  and increase keywords ranking. Wanna get result?
+                </p>
+
+                <p class="promo-note">Just leave your email</p>
+
+                <form class="promo-form">
+                  <div class="input-group">
+                    <input
+                      type="email"
+                      placeholder="Your email"
+                      class="promo-input"
+                      required
+                    />
+                  </div>
+                  <button type="submit" class="promo-button">
+                    GET A CONSULTATION
+                  </button>
+                </form>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+      <section class="blog-section">
+        <div class="container">
+          <div class="blog-header">
+            <h2 class="blog-title">Other blog articles</h2>
+          </div>
+
+          <div class="swiper blog-slider">
+            <div class="swiper-wrapper">
+              <article class="swiper-slide blog-card">
+                <div class="blog-card-image">
+                  <img
+                    src="image/blog-img.png"
+                    alt="How to Write the Perfect Outreach Letter"
+                  />
+                </div>
+                <div class="blog-card-content">
+                  <h3 class="blog-card-title">
+                    How to Write the Perfect Outreach Letter
+                  </h3>
+                  <p class="blog-card-excerpt">
+                    There are many link building tactics, and the effectiveness
+                    of most of them depends on the webmaster’s ability to
+                    communicate with site owners. This is especially true for
+                    guest posting and outreach. In our previous article
+                  </p>
+                  <a href="#" class="blog-card-link">Read more</a>
+                </div>
+              </article>
+
+              <article class="swiper-slide blog-card">
+                <div class="blog-card-image">
+                  <img
+                    src="image/blog-img.png"
+                    alt="How to Write the Perfect Outreach Letter"
+                  />
+                </div>
+                <div class="blog-card-content">
+                  <h3 class="blog-card-title">
+                    How to Write the Perfect Outreach Letter
+                  </h3>
+                  <p class="blog-card-excerpt">
+                    There are many link building tactics, and the effectiveness
+                    of most of them depends on the webmaster’s ability to
+                    communicate with site owners. This is especially true for
+                    guest posting and outreach. In our previous article
+                  </p>
+                  <a href="#" class="blog-card-link">Read more</a>
+                </div>
+              </article>
+              <article class="swiper-slide blog-card">
+                <div class="blog-card-image">
+                  <img
+                    src="image/blog-img.png"
+                    alt="How to Write the Perfect Outreach Letter"
+                  />
+                </div>
+                <div class="blog-card-content">
+                  <h3 class="blog-card-title">
+                    How to Write the Perfect Outreach Letter
+                  </h3>
+                  <p class="blog-card-excerpt">
+                    There are many link building tactics, and the effectiveness
+                    of most of them depends on the webmaster’s ability to
+                    communicate with site owners. This is especially true for
+                    guest posting and outreach. In our previous article
+                  </p>
+                  <a href="#" class="blog-card-link">Read more</a>
+                </div>
+              </article>
+
+              <article class="swiper-slide blog-card">
+                <div class="blog-card-image">
+                  <img
+                    src="image/blog-img.png"
+                    alt="How to Write the Perfect Outreach Letter"
+                  />
+                </div>
+                <div class="blog-card-content">
+                  <h3 class="blog-card-title">
+                    How to Write the Perfect Outreach Letter
+                  </h3>
+                  <p class="blog-card-excerpt">
+                    There are many link building tactics, and the effectiveness
+                    of most of them depends on the webmaster’s ability to
+                    communicate with site owners. This is especially true for
+                    guest posting and outreach. In our previous article
+                  </p>
+                  <a href="#" class="blog-card-link">Read more</a>
+                </div>
+              </article>
+              <article class="swiper-slide blog-card">
+                <div class="blog-card-image">
+                  <img
+                    src="image/blog-img.png"
+                    alt="How to Write the Perfect Outreach Letter"
+                  />
+                </div>
+                <div class="blog-card-content">
+                  <h3 class="blog-card-title">
+                    How to Write the Perfect Outreach Letter
+                  </h3>
+                  <p class="blog-card-excerpt">
+                    There are many link building tactics, and the effectiveness
+                    of most of them depends on the webmaster’s ability to
+                    communicate with site owners. This is especially true for
+                    guest posting and outreach. In our previous article
+                  </p>
+                  <a href="#" class="blog-card-link">Read more</a>
+                </div>
+              </article>
+
+              <article class="swiper-slide blog-card">
+                <div class="blog-card-image">
+                  <img
+                    src="image/blog-img.png"
+                    alt="How to Write the Perfect Outreach Letter"
+                  />
+                </div>
+                <div class="blog-card-content">
+                  <h3 class="blog-card-title">
+                    How to Write the Perfect Outreach Letter
+                  </h3>
+                  <p class="blog-card-excerpt">
+                    There are many link building tactics, and the effectiveness
+                    of most of them depends on the webmaster’s ability to
+                    communicate with site owners. This is especially true for
+                    guest posting and outreach. In our previous article
+                  </p>
+                  <a href="#" class="blog-card-link">Read more</a>
+                </div>
+              </article>
+            </div>
+
+            <div class="blog-controls">
+              <div class="swiper-button-prev blog-prev"></div>
+
+              <div class="swiper-pagination blog-pagination"></div>
+
+              <div class="swiper-button-next blog-next"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="footer-video-bg">
+        <!-- <video autoplay muted loop playsinline poster="image/footer-poster.jpg">
+          <source src="video/footer-bg.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video> -->
+        <img src="image/bg-footer.png" alt="" />
+        <div class="footer-overlay"></div>
+      </div>
+
+      <div class="container footer-content">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <a href="index.html" class="nav-logo-link">
+              <img src="image/logo.svg" alt="Linki" class="nav__logo-image" />
+            </a>
+          </div>
+
+          <h2 class="footer-main-title">
+            Links So Natural, Search Engines Fall in Love.
+          </h2>
+
+          <div class="footer-info">
+            <p class="footer-description">
+              Linki — 12 years of experience in Link Building in different
+              regions and languages. We guarantee the best client experience and
+              quality of our work.
+            </p>
+            <div class="footer-contact">
+              contact: <a href="mailto:order@linki.com">order@linki.com</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="footer-copy">
+            <p>
+              © 2025 LINKi. All content is available under the Creative Commons
+              Attribution 4.0 International license.
+            </p>
+          </div>
+
+          <nav class="footer-nav">
+            <a href="#">Link Insertion</a>
+            <a href="#">Guest posts</a>
+            <a href="#">Link Building Packages</a>
+            <a href="#">Blog</a>
+          </nav>
+        </div>
+      </div>
+      <div class="footer-mascot">
+        <img src="image/footer-dog.png" alt="Mascot Dog" />
+      </div>
+    </footer>
+    <!-- Модальне вікно та вікно подяки -->
+    <div class="modal-overlay" id="modalOverlay">
+      <div class="modal-window">
+        <button class="modal-close" id="closeModal">
+          <img src="image/close-icon-modal.svg" alt="Close" />
+        </button>
+
+        <div id="modalFormContent">
+          <h2 class="modal-title">Discuss Your Project with Linki</h2>
+          <p class="modal-subtitle">
+            Leave your contact details, and we will help you develop a custom
+            strategy for safe and natural link building.
+          </p>
+          <form class="modal-form" id="mainContactForm">
+            <div class="modal-form-row">
+              <input type="text" placeholder="Name" required />
+              <input type="url" placeholder="Site" required />
+              <input type="email" placeholder="Email" required />
+            </div>
+            <textarea placeholder="Comment"></textarea>
+            <button type="submit" class="modal-submit-btn">
+              Send a request
+            </button>
+          </form>
+        </div>
+
+        <div id="modalThankYouContent" style="display: none">
+          <h2 class="modal-title">Thank You for Your Request!🎉</h2>
+          <div class="modal-subtitle">
+            <p>
+              We have successfully received your consultation request. Our
+              specialist will:
+            </p>
+            <ul class="modal-list">
+              <li>
+                Analyze the information about your project and link building
+                needs.
+              </li>
+              <li>
+                Contact you within 24 hours during business hours to discuss the
+                details and prepare a brief.
+              </li>
+            </ul>
+          </div>
+          <div class="modal-image-wrapper">
+            <img
+              src="image/thank-you-dog.png"
+              alt="Success"
+              class="thank-you-img"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Модальне чат -->
+    <div class="chat-modal" id="chatModal">
+      <div class="chat-container">
+        <button class="chat-close" id="closeChat">&times;</button>
+
+        <div class="chat-character">
+          <img src="image/chat-dog-modal.png" alt="Otis the Dog" />
+        </div>
+
+        <div class="chat-content">
+          <h3 class="chat-title">👋 Hi, I am Otis :)</h3>
+          <p class="chat-text">
+            Your personal link building assistant. Write your email and I will
+            help you to get backlink services consultation.
+          </p>
+
+          <form class="chat-form">
+            <input type="email" placeholder="Your email" required />
+            <button type="submit" class="chat-submit-btn">
+              Get a consultation
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="js/swiper-bundle.min.js" defer></script>
+    <script src="js/script.js" defer></script>
+  </body>
+</html>
