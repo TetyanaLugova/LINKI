@@ -286,6 +286,7 @@ nav.mobile-menu__nav {
 .hero-section {
   position: relative;
   padding: 128px 0;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 .hero-title {
   font-family: var(--font-family);
@@ -395,6 +396,10 @@ input.hero-input {
 .hero-card-text {
   padding: 20px;
 }
+.hero-card-text span {
+  background: var(--colors-blue-source);
+  padding: 0 2px;
+}
 .hero.card-dark {
   background: var(--colors-base-blue-50);
 }
@@ -480,6 +485,15 @@ input.hero-input {
   object-fit: cover;
   z-index: 1;
 }
+/* .video-bg-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+} */
 .video-bg-container {
   position: absolute;
   top: 0;
@@ -489,6 +503,28 @@ input.hero-input {
   z-index: -1;
   overflow: hidden;
 }
+
+/* Створюємо шар затемнення поверх відео */
+/* .video-bg-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.video-bg-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+} */
 .video-bg {
   width: 100%;
   height: 100%;
@@ -905,12 +941,10 @@ input.hero-input {
   flex-direction: column;
   position: relative;
   width: 106px;
-  /* height: 56px; */
 }
 /* Верхня частина квитка */
 .worldwide-link-building-item-top {
-  /* flex: 1; */
-  background-image: url("../image/ticket-top-bg.svg"); /* Ваше зображення з виїмками знизу */
+  background-image: url("../image/ticket-top-bg.svg");
   background-repeat: no-repeat;
   background-size: 100% 100%;
   height: 29px;
@@ -932,10 +966,10 @@ input.hero-input {
   top: 7px;
   right: 7px;
 }
-/* Нижня частина квитка */
+
 .worldwide-link-building-item-bottom {
   height: 28px;
-  background-image: url("../image/ticket-bottom-bg.svg"); /* Ваше зображення з виїмками зверху */
+  background-image: url("../image/ticket-bottom-bg.svg");
   background-repeat: no-repeat;
   display: flex;
   justify-content: center;
@@ -950,6 +984,45 @@ input.hero-input {
   border-top: 1px dashed var(--colors-graphite-50);
   height: 1px;
   z-index: 1;
+}
+.worldwide-link-building-list-item.last-card
+  .worldwide-link-building-item-bottom {
+  height: 29px;
+  background-image: none;
+  background-color: white;
+  /* Нижні випуклі кути */
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  /* Верхні увігнуті кути через маску */
+  -webkit-mask-image:
+    radial-gradient(circle at 0 0, transparent 6px, black 6.5px),
+    radial-gradient(circle at 100% 0, transparent 6px, black 6.5px);
+  mask-image:
+    radial-gradient(circle at 0 0, transparent 6px, black 6.5px),
+    radial-gradient(circle at 100% 0, transparent 6px, black 6.5px);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+  mask-size: 100% 100%;
+  mask-repeat: no-repeat;
+}
+.worldwide-link-building-list-item.last-card .worldwide-link-building-item-top {
+  height: 29px;
+  background-image: none;
+  background-color: white;
+  /* Верхні випуклі кути */
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  /* Нижні увігнуті кути через маску */
+  -webkit-mask-image:
+    radial-gradient(circle at 0 100%, transparent 6px, black 6.5px),
+    radial-gradient(circle at 100% 100%, transparent 6px, black 6.5px);
+  mask-image:
+    radial-gradient(circle at 0 100%, transparent 6px, black 6.5px),
+    radial-gradient(circle at 100% 100%, transparent 6px, black 6.5px);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+  mask-size: 100% 100%;
+  mask-repeat: no-repeat;
 }
 /* Модальне чат */
 .chat-modal {
@@ -1442,6 +1515,12 @@ input.hero-input {
   background-position: center;
   background-size: cover;
   transition: all 0.3s ease;
+}
+.guide-wrap-content-text {
+  width: 100%;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .other-link-building-section {
   padding: 64px 0;
@@ -2935,6 +3014,19 @@ input.hero-input {
   .hero-card-text {
     padding: 32px;
     font-size: 20px;
+    font-weight: 400;
+  }
+  .hero-card-text span {
+    padding: 0 8px;
+  }
+  .hero-card-img-last {
+    top: -105px;
+  }
+  .cards-wrapper {
+    padding: 40px 20px 20px 20px;
+  }
+  .wrap-hero-form {
+    margin-bottom: 36px;
   }
   .services-section {
     padding: 128px 0 60px;
@@ -2954,6 +3046,8 @@ input.hero-input {
     position: absolute;
     left: 0;
     bottom: -100px;
+    width: 376px;
+    height: 277px;
   }
   .services-title {
     max-width: 576px;
@@ -2966,6 +3060,15 @@ input.hero-input {
   }
   .services-card-item {
     height: 376px;
+  }
+  .first-card,
+  .second-card,
+  .third-card {
+    width: 376px;
+  }
+  .fourth-card,
+  .fifth-card {
+    width: 576px;
   }
   .other-link-building-section .link-packages-card-item {
     height: auto;
@@ -2985,7 +3088,7 @@ input.hero-input {
     position: relative;
   }
   .worldwide-link-building-wrap {
-    padding: 64px 76px;
+    padding: 64px 76px 0;
   }
   .worldwide-link-building-dog-img {
     position: absolute;
@@ -2997,11 +3100,22 @@ input.hero-input {
   .worldwide-link-building-list {
     gap: 16px;
     width: 50%;
-    align-items: center;
-    padding: 70px 40px 60px 0;
+    align-items: flex-end;
+    justify-content: end;
+    padding: 70px 0px 60px 0;
   }
-  .worldwide-link-building-list-item {
-    width: 126px;
+  .worldwide-link-building-list.not-sure-list
+    .worldwide-link-building-list-item {
+    width: 176px;
+    margin: 0;
+  }
+  .worldwide-link-building-list.not-sure-list
+    .worldwide-link-building-list-item
+    .worldwide-link-building-item-top,
+  .worldwide-link-building-list.not-sure-list
+    .worldwide-link-building-list-item
+    .worldwide-link-building-item-bottom {
+    height: 46px;
   }
   .worldwide-link-building-item-top {
     height: 33px;
@@ -3016,7 +3130,7 @@ input.hero-input {
     width: 40%;
   }
   .worldwide-link-building-header-wrap {
-    padding-top: 20px;
+    /* padding-top: 20px; */
     width: 100%;
     max-width: 435px;
   }
@@ -3068,6 +3182,7 @@ input.hero-input {
     display: block;
     height: 276px;
     left: -10px;
+    bottom: 0;
   }
   .worldwide-link-building-dog-img.mob {
     display: none;
@@ -3076,15 +3191,22 @@ input.hero-input {
     display: grid !important;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 300px);
-    gap: 24px;
+    column-gap: 24px;
     width: 100% !important;
     transform: none !important;
+  }
+  .swiper-wrapper.advantages-grid {
+    padding-left: 16px;
+    padding-top: 60px;
   }
   .advantage-card {
     width: 100% !important;
     margin: 0 !important;
+    height: 276px;
   }
-
+  .advantage-card-text {
+    font-size: 20px;
+  }
   .card-manager {
     grid-column: 1 / 2;
     grid-row: 1;
@@ -3150,6 +3272,12 @@ input.hero-input {
   }
   .guide-wrap-content {
     min-height: 458px;
+    background-image:
+      linear-gradient(to top, rgba(0, 0, 0, 0), transparent),
+      url("../image/guide-bg.png");
+  }
+  .guide-wrap-content-text {
+    max-width: 1176px;
   }
   .other-link-building-section {
     padding: 128px 0 64px;
@@ -3157,6 +3285,14 @@ input.hero-input {
   .other-link {
     font-size: 36px;
   }
+  .other-link-building-section .link-packages-card-item div {
+    width: 30%;
+  }
+  .other-link-building-section .link-packages-card-item {
+    padding: 32px;
+    height: 201px;
+  }
+
   .why-linki-section {
     padding: 64px 0;
   }
@@ -3406,8 +3542,7 @@ input.hero-input {
 
 .swiper-button-next:hover,
 .swiper-button-prev:hover,
-.worldwide-link-building-btn:hover,
-.link-packages-card-chat-btn:hover {
+.worldwide-link-building-btn:hover {
   background: var(--colors-graphite-source);
   transition: background 0.3s ease;
   color: var(--colors-base-white);
