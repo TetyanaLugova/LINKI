@@ -1602,12 +1602,26 @@ input.hero-input {
 .advantage-card.card-light .advantage-card-text {
   color: var(--colors-graphite-source);
 }
+
 .advantage-card.card-dark {
-  background-image: url("../image/why-bg-3-mob.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  min-height: 256px;
+  background: #333333eb;
+}
+
+.card-video {
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  object-fit: cover;
+}
+.card-content {
+  position: relative;
+  z-index: 1;
 }
 .advantage-card.card-light {
   background-image: url("../image/why-bg-5-mob.png");
@@ -1636,11 +1650,12 @@ input.hero-input {
 }
 .worldwide-link-building-list.not-sure-list {
   flex-direction: column;
+  align-content: center;
 }
 .worldwide-link-building-list.not-sure-list .worldwide-link-building-list-item {
   width: 132px;
-  margin-left: auto;
-  margin-right: auto;
+  /* margin-left: auto;
+  margin-right: auto; */
 }
 .not-sure-item .worldwide-link-building-item-top {
   height: 35px;
@@ -1808,11 +1823,17 @@ input.hero-input {
 .blog-section {
   position: relative;
   padding: 32px 0;
-  background: linear-gradient(
+  /* background: linear-gradient(
     180deg,
     rgba(206, 212, 218, 0) 0%,
     rgba(206, 212, 218, 0.5) 100%
-  );
+  ); */
+  background: linear-gradient(
+    180deg,
+    rgba(206, 212, 218, 0) 0%,
+    rgba(206, 212, 218, 0.1) 50%,
+    /* Дуже слабкий колір посередині */ rgba(206, 212, 218, 0.5) 100%
+  ); /* Фінальна точка */
 }
 .start-section {
   padding: 32px 0;
@@ -1880,6 +1901,9 @@ input.hero-input {
   align-items: center;
   justify-content: space-between;
   padding: 0 16px;
+}
+.swiper.blog-slider {
+  margin-left: 20px;
 }
 .blog-card {
   border-radius: 8px;
@@ -2613,6 +2637,7 @@ input.hero-input {
 @media (min-width: 330px) {
   .worldwide-link-building-list.not-sure-list {
     flex-direction: row;
+    max-width: 545px;
   }
 }
 @media (min-width: 546px) {
@@ -3131,7 +3156,7 @@ input.hero-input {
     width: 126px;
   }
   .not-sure-section .worldwide-link-building-list {
-    gap: 16px;
+    gap: 8px;
     width: 60%;
     align-items: flex-end;
     justify-content: end;
@@ -3251,8 +3276,11 @@ input.hero-input {
   .advantage-card.card-dark {
     grid-column: 3 / 5; /* Займає 3 та 4 стовпці */
     grid-row: 1;
+    min-height: 276px;
   }
-
+  .card-video {
+    right: -20%;
+  }
   .card-green {
     grid-column: 1 / 2;
     grid-row: 2;
@@ -3265,13 +3293,7 @@ input.hero-input {
     grid-column: 4 / 5;
     grid-row: 2;
   }
-  .advantage-card.card-dark {
-    background-image: url("../image/why-bg-3.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    transition: all 0.3s ease;
-  }
+
   .advantage-card.card-light {
     background-image: url("../image/why-bg-5.png");
     background-repeat: no-repeat;
@@ -3325,16 +3347,18 @@ input.hero-input {
     padding: 32px;
     height: 201px;
   }
-
   .why-linki-section {
     padding: 64px 0;
   }
-  .reviews-section {
+  .worldwide-link-building-wrap-chat {
+    margin-top: 34px;
+  }
+  .review-text .reviews-section {
     padding: 128px 0 64px;
   }
   .reviews-container {
     position: relative;
-    max-width: 900px;
+    max-width: 1176px;
   }
   .reviews-container .discount-blok {
     position: absolute;
@@ -3349,10 +3373,10 @@ input.hero-input {
   .reviews-slider {
     width: 100%;
     max-width: 1176px;
-    padding: 20px 200px;
+    /* padding: 20px 200px; */
   }
-  .reviews-slider .swiper-wrapper {
-    overflow: hidden;
+  .review-text {
+    max-width: 800px;
   }
   .reviews-prev {
     left: 0;
@@ -3365,6 +3389,26 @@ input.hero-input {
   }
   .blog-section {
     padding: 64px 0;
+  }
+  .swiper.blog-slider {
+    padding-left: clamp(52px, -620px + 52.5vw, 388px);
+  }
+  .blog-card {
+    width: 276px;
+  }
+  .blog-card-image {
+    width: 252px;
+  }
+  .blog-pagination .swiper-pagination-bullet-active {
+    background: var(--colors-graphite-100);
+    width: 176px;
+    height: 9px;
+  }
+  .blog-controls {
+    max-width: 1176px;
+  }
+  .container:has(.blog-controls) {
+    margin: 0;
   }
   .fag-wrap {
     display: flex;
@@ -3550,6 +3594,9 @@ input.hero-input {
 .faq-question:focus {
   color: var(--colors-blue-source);
   transition: color 0.3s ease;
+}
+.faq-accordion-item[open] .faq-question {
+  color: var(--colors-blue-source);
 }
 .faq-question:hover .faq-icon::after,
 .faq-question:focus .faq-icon::after {
