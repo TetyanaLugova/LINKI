@@ -149,8 +149,11 @@ chatStartBtns.forEach((btn) => {
 
 // 2. Автозапуск та розумний клік
 window.addEventListener("load", () => {
-  // Автоматично відкриваємо чат при завантаженні з легким оверлеєм
-  openChatFunc(true);
+  // Автоматично відкриваємо чат тільки при першому завантаженні
+  if (!localStorage.getItem("chatInitiallyShown")) {
+    openChatFunc(true);
+    localStorage.setItem("chatInitiallyShown", "true");
+  }
 
   // Додаємо "розумний" клік через невелику затримку, щоб уникнути подвійного спрацьовування
   setTimeout(() => {
