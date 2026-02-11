@@ -116,30 +116,66 @@ document.getElementById("closeModal").addEventListener("click", () => {
   }, 300); // Чекаємо поки модалка закриється візуально
 });
 
-// Отримуємо всі кнопки
 const chatStartBtns = document.querySelectorAll(".chat-start-btn");
 const chatModal = document.getElementById("chatModal");
 const closeChat = document.getElementById("closeChat");
 
-// Проходимо циклом по кожній кнопці і додаємо подію
+const openChatFunc = (useOverlay = false) => {
+  // Додаємо оверлей тільки якщо це потрібно (перший запуск)
+  if (useOverlay) {
+    chatModal.classList.add("with-overlay");
+  } else {
+    chatModal.classList.remove("with-overlay");
+  }
+
+  chatModal.classList.add("is-open");
+  document.body.style.overflow = "hidden";
+  localStorage.setItem("chatWasShown", "true");
+};
+
+const closeChatFunc = () => {
+  chatModal.classList.remove("is-open");
+  chatModal.classList.remove("with-overlay");
+  document.body.style.overflow = "";
+};
+
+// 1. Кнопки (завжди без оверлею)
 chatStartBtns.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    chatModal.classList.add("is-open");
-    document.body.style.overflow = "hidden";
+  btn.addEventListener("click", (e) => {
+    e.stopPropagation(); // Зупиняємо спливання, щоб не спрацював клік по документу
+    openChatFunc(false);
   });
 });
 
-// Закрити чат (тут все правильно, бо кнопка закриття одна)
-closeChat.addEventListener("click", () => {
-  chatModal.classList.remove("is-open");
-  document.body.style.overflow = "";
+// 2. Автозапуск та розумний клік
+window.addEventListener("load", () => {
+  // Автоматично відкриваємо чат при завантаженні з легким оверлеєм
+  openChatFunc(true);
+
+  // Додаємо "розумний" клік через невелику затримку, щоб уникнути подвійного спрацьовування
+  setTimeout(() => {
+    const handleSmartClick = (e) => {
+      // Не реагуємо, якщо клік був по інтерактивному елементу
+      const isInteractive = e.target.closest(
+        "button, a, input, textarea, select, .swiper-button-next, .swiper-button-prev, .chat-container"
+      );
+
+      // Якщо клікнули по пустому місцю і чат зараз закритий — відкриваємо БЕЗ оверлею
+      if (!isInteractive && !chatModal.classList.contains("is-open")) {
+        openChatFunc(false);
+      }
+    };
+
+    document.addEventListener("click", handleSmartClick);
+  }, 500);
 });
 
-// Закриття кліком на фон
+// Закриття
+closeChat.addEventListener("click", closeChatFunc);
+
 chatModal.addEventListener("click", (e) => {
   if (e.target === chatModal) {
-    chatModal.classList.remove("is-open");
-    document.body.style.overflow = "";
+    closeChatFunc();
   }
 });
 
