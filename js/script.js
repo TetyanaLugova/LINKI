@@ -157,7 +157,7 @@ window.addEventListener("load", () => {
     const handleSmartClick = (e) => {
       // Не реагуємо, якщо клік був по інтерактивному елементу
       const isInteractive = e.target.closest(
-        "button, a, input, textarea, select, .swiper-button-next, .swiper-button-prev, .chat-container"
+        "button, a, input, textarea, select, .swiper-button-next, .swiper-button-prev, .chat-container",
       );
 
       // Якщо клікнули по пустому місцю і чат зараз закритий — відкриваємо БЕЗ оверлею
