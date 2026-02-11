@@ -2798,9 +2798,7 @@ input.hero-input {
     margin-left: auto;
     margin-right: auto;
   }
-  .about-grid {
-    display: flex;
-  }
+
   /* Blog page */
 
   .blog-page-wrap {
@@ -2814,6 +2812,12 @@ input.hero-input {
   }
   .blog-page-wrap .blog-card {
     width: 49%;
+  }
+}
+@media (min-width: 580px) {
+  .about-grid {
+    display: flex;
+    gap: 48px;
   }
 }
 @media (min-width: 824px) {
