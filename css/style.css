@@ -2460,7 +2460,7 @@ input.hero-input {
 }
 .blog-pagination {
   display: flex;
-  gap: 12px;
+  gap: 6px;
   justify-content: end;
 }
 .pagination {
