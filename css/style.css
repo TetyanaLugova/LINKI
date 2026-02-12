@@ -3744,9 +3744,7 @@ input.hero-input {
   align-items: flex-end; /* по вертикалі знизу */
   padding: 20px; /* відступ від краю */
   background-color: rgba(0, 0, 0, 0.28); /* Легкий затемнений оверлей */
-  backdrop-filter: blur(3px); /* Невелике розмиття */
 }
-
 /* Додаткове правило, щоб скинути обмеження зі звичайного .chat-modal
    і зафіксувати .chat-container у правому-нижньому куті */
 .chat-modal.with-overlay {
