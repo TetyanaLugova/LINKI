@@ -124,13 +124,13 @@ const openChatFunc = (useOverlay = false) => {
   // Додаємо оверлей тільки якщо це потрібно (перший запуск)
   if (useOverlay) {
     chatModal.classList.add("with-overlay");
+    document.body.style.overflow = "hidden"; // Заборонити скрол при першому відкритті
   } else {
     chatModal.classList.remove("with-overlay");
+    document.body.style.overflow = ""; // Дозволити скрол при наступних відкриттях
   }
 
   chatModal.classList.add("is-open");
-  document.body.style.overflow = "hidden";
-  localStorage.setItem("chatWasShown", "true");
 };
 
 const closeChatFunc = () => {
@@ -139,7 +139,7 @@ const closeChatFunc = () => {
   document.body.style.overflow = "";
 };
 
-// 1. Кнопки (завжди без оверлею)
+// 1. Кнопки (завжди без оверлею - дозволити скрол)
 chatStartBtns.forEach((btn) => {
   btn.addEventListener("click", (e) => {
     e.stopPropagation(); // Зупиняємо спливання, щоб не спрацював клік по документу
@@ -149,10 +149,10 @@ chatStartBtns.forEach((btn) => {
 
 // 2. Автозапуск та розумний клік
 window.addEventListener("load", () => {
-  // Автоматично відкриваємо чат тільки при першому завантаженні
-  if (!localStorage.getItem("chatInitiallyShown")) {
+  // Автоматично відкриваємо чат тільки при першому завантаженні сесії
+  if (!sessionStorage.getItem("chatInitiallyShown")) {
     openChatFunc(true);
-    localStorage.setItem("chatInitiallyShown", "true");
+    sessionStorage.setItem("chatInitiallyShown", "true");
   }
 
   // Додаємо "розумний" клік через невелику затримку, щоб уникнути подвійного спрацьовування
@@ -160,7 +160,7 @@ window.addEventListener("load", () => {
     const handleSmartClick = (e) => {
       // Не реагуємо, якщо клік був по інтерактивному елементу
       const isInteractive = e.target.closest(
-        "button, a, input, textarea, select, .swiper-button-next, .swiper-button-prev, .chat-container",
+        "button, a, input, textarea, select, .swiper-button-next, .swiper-button-prev, .chat-container, details, summary",
       );
 
       // Якщо клікнули по пустому місцю і чат зараз закритий — відкриваємо БЕЗ оверлею
